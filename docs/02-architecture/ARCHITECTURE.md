@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -49,17 +49,17 @@ A single FastAPI service hosts: the cross-cutting authorization middleware, E/F/
 
 ## 4. Frontend Architecture **[Derived]**
 
-Next.js on Vercel. Role-based views per Part 3's role table (Student / Institution / Faculty / Placement Cell / Company / Recruiter / Mentor / Admin). Screen-level behavior specified in ANCHOR_UX_SPEC.md. The frontend never computes `E`/`F`/`O`/`Priority` client-side — all scoring is server-authoritative.
+Next.js on Vercel. Role-based views per Part 3's role table (Student / Institution / Faculty / Placement Cell / Company / Recruiter / Mentor / Admin). Screen-level behavior specified in 04-ux/UX_SPEC.md. The frontend never computes `E`/`F`/`O`/`Priority` client-side — all scoring is server-authoritative.
 
 ## 5. FastAPI Backend Architecture **[Derived]**
 
 - **Cross-cutting middleware:** `AuthN → RBAC → object/tenant-authorization → action-authorization → audit`, applied uniformly to every endpoint (Master §13) — never an ad hoc ownership filter on list queries only.
-- **Domain modules** as listed in §3, each exposing the endpoints inventoried in ANCHOR_API_SPEC.md.
-- **Background jobs** (APScheduler) inventoried in ANCHOR_IMPLEMENTATION_PLAN.md / Master Part 19, invoking the same domain-module logic used by request-driven endpoints — no duplicated business logic between request and job paths.
+- **Domain modules** as listed in §3, each exposing the endpoints inventoried in 03-engineering-specs/API_SPEC.md.
+- **Background jobs** (APScheduler) inventoried in 05-planning/IMPLEMENTATION_PLAN.md / Master Part 19, invoking the same domain-module logic used by request-driven endpoints — no duplicated business logic between request and job paths.
 
 ## 6. PostgreSQL Architecture
 
-Single managed PostgreSQL instance (Render) with the pgvector extension. All entities in ANCHOR_DATA_MODEL.md live in this one relational store — no polyglot persistence. `allocation_snapshots` and `subject_identity_mapping` are physically separate tables to preserve the privacy/reproducibility separation (ADR-08).
+Single managed PostgreSQL instance (Render) with the pgvector extension. All entities in 02-architecture/DATA_MODEL.md live in this one relational store — no polyglot persistence. `allocation_snapshots` and `subject_identity_mapping` are physically separate tables to preserve the privacy/reproducibility separation (ADR-08).
 
 ## 7. pgvector Usage
 
@@ -84,24 +84,24 @@ Every job's transaction boundary is scoped to its single output artifact (§21) 
 | `model_calibrate` | `model_train` success | `model_train` succeeded for this cycle | New model artifact | `calibration_artifacts` row (Brier, log loss, calibration curve) | Retry on transient failure | Yes — per `model_version` | Failure prevents activation decision; falls through to `HEURISTIC_FALLBACK` |
 | `model_validate_activate` | `model_calibrate` success | Both prior jobs succeeded | Calibration artifact, VALIDATION-partition data | `validation_evidence` row (frozen regardless of outcome) | Retry on transient failure | Yes — per cycle | Any of the 5 gate conditions failing → `HEURISTIC_FALLBACK`, evidence still recorded |
 | `allocation_run` | Admin/system trigger for a cycle | `E`/`F`/`O` (or fallback) available for the cycle | Eligible-pair universe, preferences, capacities | `allocation_runs`, `allocations`, `allocation_snapshots` rows | No automatic retry — a failed run does not partially persist; re-trigger creates a new run | No — each trigger creates a new run (by design, FR-011 freeze invariant) | Never partially writes an allocation, model version, or snapshot (§21) |
-| `outcome_generation` | Post-allocation, per cycle | `allocation_run` completed for the cycle | Full eligible-pair universe, cycle state | `outcomes` rows (`OFFER_EXTENDED`, full eligible-pair universe) | Retry on transient failure | Yes — per cycle | Never consumes allocation-produced/internal state (label-generator feature contract, §4/§12 of ANCHOR_AI_DS_SPEC.md) |
-| `recovery_processing` | Dropout/vacancy event | Published allocation exists | Transitive-closure-affected candidates/opportunities | `recovery_queue` entries, new (recovery) `allocation_runs`/`allocations` | `retry_count` tracked per queue entry; escalates to admin-triggered full rerun past threshold (numeric value unspecified in Master — Configurable) | Enforced — ≤1 `ACTIVE` entry per candidate per `allocation_generation` | Labeled a locally stable heuristic, never full-market-stable (§6.7 of Master; ANCHOR_ALLOCATION_ENGINE.md §13) |
+| `outcome_generation` | Post-allocation, per cycle | `allocation_run` completed for the cycle | Full eligible-pair universe, cycle state | `outcomes` rows (`OFFER_EXTENDED`, full eligible-pair universe) | Retry on transient failure | Yes — per cycle | Never consumes allocation-produced/internal state (label-generator feature contract, §4/§12 of 03-engineering-specs/AI_DS_SPEC.md) |
+| `recovery_processing` | Dropout/vacancy event | Published allocation exists | Transitive-closure-affected candidates/opportunities | `recovery_queue` entries, new (recovery) `allocation_runs`/`allocations` | `retry_count` tracked per queue entry; escalates to admin-triggered full rerun past threshold (numeric value unspecified in Master — Configurable) | Enforced — ≤1 `ACTIVE` entry per candidate per `allocation_generation` | Labeled a locally stable heuristic, never full-market-stable (§6.7 of Master; 03-engineering-specs/ALLOCATION_ENGINE.md §13) |
 | `analytics_update` | Scheduled, post-cycle-close | Sufficient outcomes accumulated | `outcomes`, `allocations` history | `institutional_analytics` rows | Retry on transient failure | Yes — recomputation is idempotent per institution/cycle | Never displays a partial/individual-level fallback below the sample-size-10 gate (FR-022) |
 | `snapshot_integrity_check` | Scheduled, periodic | `allocation_snapshots` rows exist | Stored `snapshot_blob`/`snapshot_hash` pairs | Integrity-check log entry | Retry on transient failure | Yes — read-only verification | Detected mismatch is logged/alerted; never rewrites `snapshot_blob` or `snapshot_hash` |
 
-Milestone-level sequencing for these jobs: see ANCHOR_IMPLEMENTATION_PLAN.md.
+Milestone-level sequencing for these jobs: see 05-planning/IMPLEMENTATION_PLAN.md.
 
 ## 10. Authentication/Authorization Layers
 
-`AuthN` (JWT/OAuth2) → `RBAC` (Part 3 role table) → object/tenant-authorization → action-authorization → audit. Full detail: ANCHOR_SECURITY_PRIVACY.md.
+`AuthN` (JWT/OAuth2) → `RBAC` (Part 3 role table) → object/tenant-authorization → action-authorization → audit. Full detail: 03-engineering-specs/SECURITY_PRIVACY.md.
 
 ## 11. Allocation Engine
 
-The `allocation` module implements candidate-proposing Deferred Acceptance over frozen `E`/`F`/`O`/`Priority` inputs. Full specification: ANCHOR_ALLOCATION_ENGINE.md.
+The `allocation` module implements candidate-proposing Deferred Acceptance over frozen `E`/`F`/`O`/`Priority` inputs. Full specification: 03-engineering-specs/ALLOCATION_ENGINE.md.
 
 ## 12. Model Pipeline
 
-The `opportunity_signal` module implements TRAIN → CALIBRATE → VALIDATE/ACTIVATE for the `O_offer` target, with deterministic `HEURISTIC_FALLBACK` on any gate failure. Full specification: ANCHOR_AI_DS_SPEC.md.
+The `opportunity_signal` module implements TRAIN → CALIBRATE → VALIDATE/ACTIVATE for the `O_offer` target, with deterministic `HEURISTIC_FALLBACK` on any gate failure. Full specification: 03-engineering-specs/AI_DS_SPEC.md.
 
 ## 13. Recovery Engine
 
@@ -109,7 +109,7 @@ Reruns DA over the transitive closure of dropout/vacancy-affected candidates and
 
 ## 14. Snapshot Service
 
-Writes immutable `AllocationSnapshot` records (`snapshot_blob` + `snapshot_hash`, both required) and separately maintains the mutable `subject_identity_mapping` table. Full specification: Master Part 12, summarized in ANCHOR_DATA_MODEL.md and ANCHOR_SECURITY_PRIVACY.md.
+Writes immutable `AllocationSnapshot` records (`snapshot_blob` + `snapshot_hash`, both required) and separately maintains the mutable `subject_identity_mapping` table. Full specification: Master Part 12, summarized in 02-architecture/DATA_MODEL.md and 03-engineering-specs/SECURITY_PRIVACY.md.
 
 ## 15. Analytics
 
@@ -140,7 +140,7 @@ Scheduler tick → prerequisite check (e.g., prior job success, cycle state) →
 
 ## 21. Failure Boundaries
 
-Every job's transaction boundary is scoped to its single output artifact — no job partially writes an allocation, model version, or snapshot (Part 19, 21). Failure modes (worker crash, insufficient data, failed model activation, recovery retry escalation) are enumerated defined states in ANCHOR_TEST_PLAN.md and Master Part 21 — never silent errors.
+Every job's transaction boundary is scoped to its single output artifact — no job partially writes an allocation, model version, or snapshot (Part 19, 21). Failure modes (worker crash, insufficient data, failed model activation, recovery retry escalation) are enumerated defined states in 06-testing/TEST_PLAN.md and Master Part 21 — never silent errors.
 
 ## 22. Locked Architecture vs. Derived Implementation Structure
 

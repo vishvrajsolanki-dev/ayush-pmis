@@ -5,11 +5,11 @@
 Status:        FINAL — supersedes ANCHOR_SIH_GAP_ANALYSIS_AND_ANSWERS.md
 Corrects:      Market sizing, competitive landscape, and government-integration
                narrative, which previously assumed a generic/AICTE framing.
-               See ANCHOR_SIH26044_PROBLEM_STATEMENT_AND_FRAMING.md for why.
+               See 00-product/PROBLEM_STATEMENT.md for why.
 Relation to
 the Master:    Additive only — zero edits to any of your 15 original ANCHOR
                documents were needed (verified in the companion doc, §4).
-Read with:     ANCHOR_SIH26044_PROBLEM_STATEMENT_AND_FRAMING.md (the exact PS
+Read with:     00-product/PROBLEM_STATEMENT.md (the exact PS
                text + domain framing this document builds on)
 ```
 
@@ -19,7 +19,7 @@ Read with:     ANCHOR_SIH26044_PROBLEM_STATEMENT_AND_FRAMING.md (the exact PS
 
 The first gap-analysis pass (delivered before the exact PS was verified) built its market, competitor, and government-integration answers around a generic higher-education/AICTE framing. Verifying SIH26044 directly against sih.gov.in mirrors showed the sponsoring body is **Ministry of Ayush**, not Ministry of Education/AICTE. Three sections below (§3 Market Sizing, §4 Competitive Landscape, §11 Government Integration) are therefore fully rewritten with AYUSH-sector data. Every other section (risk register, cost model, references, Q&A script) carries forward unchanged, because nothing in them was domain-specific to begin with — flagged explicitly where that's true.
 
-This document still respects every rule your own documents already established: no invented figures, every number cited to a named source, honest disagreement between sources shown rather than hidden (see §3.2), and no claim stronger than the evidence supports — the same discipline ANCHOR_AI_DS_SPEC.md §16 and ANCHOR_DOCUMENTATION_AUDIT.md already apply to the technical spec, now applied to the pitch material.
+This document still respects every rule your own documents already established: no invented figures, every number cited to a named source, honest disagreement between sources shown rather than hidden (see §3.2), and no claim stronger than the evidence supports — the same discipline 03-engineering-specs/AI_DS_SPEC.md §16 and 08-audit/DOCUMENTATION_AUDIT.md already apply to the technical spec, now applied to the pitch material.
 
 ---
 
@@ -34,7 +34,7 @@ This document still respects every rule your own documents already established: 
 **Model: students free, always. AYUSH institutions and AYUSH industry pay for capability. The Ministry of AYUSH's existing scheme infrastructure is the anchor-tenant and scale channel — not a hypothetical government partner, but one that already runs a structurally identical allocation process (see §2.3).**
 
 ### 2.1 Why students must never pay (unchanged from prior draft — this is a hard constraint, not domain-specific)
-Charging the mandatory-participant, less-powerful side of a two-sided market for access to a placement process is both an equity failure and a direct contradiction of Anchor's own "AI predicts; matching decides; constraints protect; humans govern" principle (ANCHOR_LATEST_IDEA.md §3) and its opt-in-only, `PRIVATE`-by-default data posture (ANCHOR_SECURITY_PRIVACY.md §5).
+Charging the mandatory-participant, less-powerful side of a two-sided market for access to a placement process is both an equity failure and a direct contradiction of Anchor's own "AI predicts; matching decides; constraints protect; humans govern" principle (00-product/PRODUCT_NARRATIVE.md §3) and its opt-in-only, `PRIVATE`-by-default data posture (03-engineering-specs/SECURITY_PRIVACY.md §5).
 
 ### 2.2 Revenue streams, AYUSH-specific
 | Stream | What it buys | Why this payer, this price point |
@@ -67,7 +67,7 @@ Charging the mandatory-participant, less-powerful side of a two-sided market for
 | Projected AYUSH contribution to India's GDP | **5% by 2047**, up from **1.1% today** | Ayush Secretary Kotecha, CII summit 2025, reported via ocacademy.in and multiple outlets |
 | Job opportunities the sector is projected to generate | **~3 million** | Invest India sector page (investindia.gov.in/sector/ayush) |
 
-**Honest flag on the range:** the $18.1B → $23.3B trajectory comes from the same RIS-report lineage cited consistently across two separate PIB/Rajya Sabha answers a year apart, and is the more rigorously sourced figure. The $43B figure comes from ministerial public remarks at conferences, without a named published report attached in the sources checked. **Present both, labeled by source type, rather than picking the bigger number** — this is exactly the discipline ANCHOR_AI_DS_SPEC.md §16 already applies to your own O-signal claims, now applied here.
+**Honest flag on the range:** the $18.1B → $23.3B trajectory comes from the same RIS-report lineage cited consistently across two separate PIB/Rajya Sabha answers a year apart, and is the more rigorously sourced figure. The $43B figure comes from ministerial public remarks at conferences, without a named published report attached in the sources checked. **Present both, labeled by source type, rather than picking the bigger number** — this is exactly the discipline 03-engineering-specs/AI_DS_SPEC.md §16 already applies to your own O-signal claims, now applied here.
 
 ### 3.2 AYUSH academia — the "Academia" side of the market
 
@@ -94,7 +94,7 @@ Charging the mandatory-participant, less-powerful side of a two-sided market for
 | Existing system/precedent | What it does | Where Anchor differs |
 |---|---|---|
 | **AACCC / NCISM online counselling** | Centralized, government-run, ranked-preference seat allocation for AYUSH UG/PG *admissions* (not internships/placement) | This is Anchor's strongest precedent, not a competitor — it proves government-scale, ranked-preference allocation is already trusted and operational inside the sponsoring ministry. Anchor extends the same discipline downstream, from admissions into internships/placement, which AACCC does not cover. |
-| **Manual placement-cell processes at individual AYUSH colleges** | Faculty-driven, ad hoc shortlisting for clinical internships and industry placements, no standardized cross-institution mechanism | Exactly the "manual... opaque" gap your own ANCHOR_LATEST_IDEA.md §2 names generically — now grounded in a real, named, verifiable domain instead of an abstract "college placement cell" |
+| **Manual placement-cell processes at individual AYUSH colleges** | Faculty-driven, ad hoc shortlisting for clinical internships and industry placements, no standardized cross-institution mechanism | Exactly the "manual... opaque" gap your own 00-product/PRODUCT_NARRATIVE.md §2 names generically — now grounded in a real, named, verifiable domain instead of an abstract "college placement cell" |
 | **Generic job/internship portals (Internshala, LinkedIn, Naukri)** | Ranked-list discovery, no mechanism-level stability guarantee, no AYUSH-specific evidence/verification model (e.g., no structured way to represent completed Panchakarma-training hours or NCISM-registration status as a hard eligibility criterion) | Structural separation of hard eligibility / graded fit / synthetic signal (ADR-02) plus mandatory human governance (ADR-09) — neither exists in a generic portal |
 | **AYUSH-specific government digital infrastructure already live** (for context, not as direct competitors): **e-Charak** (medicinal-plants sourcing platform, National Medicinal Plants Board), the **single-window AYUSH manufacturer/drug-testing-lab licensing system**, **AIIA ICAINE** (AYUSH startup incubation) | Adjacent AYUSH-sector digital infrastructure, none of which does skill-mapping/internship/placement allocation | Anchor is complementary to, not competing with, this existing digital ecosystem — worth naming to a Ministry-of-Ayush jury as evidence you understand what already exists (see the "we didn't know about X" failure mode named in the winning-team retrospectives cited in the original gap-analysis draft) |
 
@@ -105,7 +105,7 @@ Charging the mandatory-participant, less-powerful side of a two-sided market for
 
 ## 5. COST OF IMPLEMENTATION (unchanged from prior draft — genuinely domain-neutral)
 
-Your locked stack (Next.js/Vercel, FastAPI/Render, PostgreSQL+pgvector, APScheduler — ANCHOR_ARCHITECTURE.md §1) was chosen specifically to avoid microservice/graph-DB/queue overhead (ADR-06, ADR-07), and that engineering discipline is also a cost decision:
+Your locked stack (Next.js/Vercel, FastAPI/Render, PostgreSQL+pgvector, APScheduler — 02-architecture/ARCHITECTURE.md §1) was chosen specifically to avoid microservice/graph-DB/queue overhead (ADR-06, ADR-07), and that engineering discipline is also a cost decision:
 
 | Phase | Monthly cost (₹, order-of-magnitude) | Why |
 |---|---|---|
@@ -129,8 +129,8 @@ Your locked stack (Next.js/Vercel, FastAPI/Render, PostgreSQL+pgvector, APSchedu
 | Horizon | Milestone | Grounded in |
 |---|---|---|
 | Year 1 | Single AYUSH-institution pilot; DA + governance live on `HEURISTIC_FALLBACK` | ADR-05, ADR-10 |
-| Year 2 | Regional AYUSH-college cluster; `O_offer` ML activation once `MIN_O_EVENTS_PER_PARTITION` clears on real cycle data | ANCHOR_AI_DS_SPEC.md §6–7 |
-| Year 3 | Phase 2 begins per your own Master boundary: `O_shortlist`/`O_interview`, unseen-opportunity/company holdout evaluation, once real dataset scale exists | ANCHOR_PRD.md §14 |
+| Year 2 | Regional AYUSH-college cluster; `O_offer` ML activation once `MIN_O_EVENTS_PER_PARTITION` clears on real cycle data | 03-engineering-specs/AI_DS_SPEC.md §6–7 |
+| Year 3 | Phase 2 begins per your own Master boundary: `O_shortlist`/`O_interview`, unseen-opportunity/company holdout evaluation, once real dataset scale exists | 00-product/PRD.md §14 |
 | Year 4–5 | Potential integration conversation with NAM/AACCC-adjacent Ministry infrastructure; multi-AYUSH-system (Ayurveda/Yoga/Unani/Siddha/Homeopathy) coverage parity — flagged as future scope, not yet designed | New — open item |
 
 ---
@@ -149,10 +149,10 @@ Your locked stack (Next.js/Vercel, FastAPI/Render, PostgreSQL+pgvector, APSchedu
 |---|---|
 | Cold start — no real data at launch | `HEURISTIC_FALLBACK` (ADR-05) |
 | Data-poor cycles even post-launch | Same fallback, per-cycle, transparently logged |
-| Synthetic-to-real generalization gap | Explicitly scoped as Synthetic Validity only (ANCHOR_AI_DS_SPEC.md §16) |
-| Adoption resistance from placement cells used to manual control | Mandatory human review + override (ADR-09, ANCHOR_ALLOCATION_ENGINE.md §11) |
-| Privacy/re-identification concern | Scoped non-claim (ANCHOR_SECURITY_PRIVACY.md §8), identity/computation separation (ADR-08) |
-| Recovery/override conflated with full DA stability | Explicit UI rule (ANCHOR_UX_SPEC.md §17), tested (RT-05) |
+| Synthetic-to-real generalization gap | Explicitly scoped as Synthetic Validity only (03-engineering-specs/AI_DS_SPEC.md §16) |
+| Adoption resistance from placement cells used to manual control | Mandatory human review + override (ADR-09, 03-engineering-specs/ALLOCATION_ENGINE.md §11) |
+| Privacy/re-identification concern | Scoped non-claim (03-engineering-specs/SECURITY_PRIVACY.md §8), identity/computation separation (ADR-08) |
+| Recovery/override conflated with full DA stability | Explicit UI rule (04-ux/UX_SPEC.md §17), tested (RT-05) |
 | National AYUSH-college count not yet confidently sourced (new, from §3.2) | Explicitly flagged as an open action item rather than papered over — resolve before presenting a hard TAM number |
 | Theme-classification / extended-brief ambiguity for SIH26044 itself (new, from companion doc §2) | Explicitly flagged; verify directly on sih.gov.in before finalizing framing |
 
@@ -165,7 +165,7 @@ Your locked stack (Next.js/Vercel, FastAPI/Render, PostgreSQL+pgvector, APSchedu
 - **JoSAA / CSAB, Government of India** — a second, independent real-world precedent for the same mechanism class at national scale.
 - **Research and Information System for Developing Countries (RIS) / Forum on Indian Traditional Medicine (FITM), "Ayush Sector in India: Prospects and Challenges" (2021)** — origin of the $18.1B/$23.3B market-size figures, cited via PIB Delhi (17 Dec 2024) and Rajya Sabha Unstarred Questions (11.02.2025, 11.03.2025).
 - **National Sample Survey Office, 79th Round (July 2022–June 2023)** — the first all-India AYUSH-specific household survey, source for the awareness/usage figures in §8.
-- **Brier, G. W. (1950). "Verification of Forecasts Expressed in Terms of Probability." *Monthly Weather Review*, 78(1), 1–3.** — origin of the Brier-score calibration metric used in your Practical-Significance activation gate (ANCHOR_AI_DS_SPEC.md §6–7).
+- **Brier, G. W. (1950). "Verification of Forecasts Expressed in Terms of Probability." *Monthly Weather Review*, 78(1), 1–3.** — origin of the Brier-score calibration metric used in your Practical-Significance activation gate (03-engineering-specs/AI_DS_SPEC.md §6–7).
 
 ---
 
@@ -194,12 +194,12 @@ Your locked stack (Next.js/Vercel, FastAPI/Render, PostgreSQL+pgvector, APSchedu
 
 | Judge asks | Answer |
 |---|---|
-| "What if two candidates tie for the last seat?" | Deterministic `tiebreak_key`, seeded once at registration, epsilon `1e-9` (ANCHOR_ALLOCATION_ENGINE.md §7) |
+| "What if two candidates tie for the last seat?" | Deterministic `tiebreak_key`, seeded once at registration, epsilon `1e-9` (03-engineering-specs/ALLOCATION_ENGINE.md §7) |
 | "What if there's no training data yet?" | `HEURISTIC_FALLBACK` — allocation never blocks, status shown transparently (ADR-05, DT-02) |
-| "Does your AI predict who gets hired?" | No — `O_offer` is trained/evaluated entirely on synthetic data; deployment validity explicitly not assessed (ANCHOR_AI_DS_SPEC.md §16) |
+| "Does your AI predict who gets hired?" | No — `O_offer` is trained/evaluated entirely on synthetic data; deployment validity explicitly not assessed (03-engineering-specs/AI_DS_SPEC.md §16) |
 | **NEW — "Why should the Ministry of Ayush trust this mechanism?"** | **Because it already does — AACCC/NCISM runs the same mechanism class for AYUSH admissions today. Anchor extends it one stage further.** |
 | **NEW — "Isn't this just a generic placement portal renamed for AYUSH?"** | No — the E/F/O separation lets AYUSH-specific hard requirements (e.g., completed clinical-internship hours, NCISM/NCH registration) sit structurally apart from graded fit and from any learned signal, which no generic portal does, and which the sector's own regulator-driven eligibility requirements actually need |
-| "What happens if a company withdraws an offer after publication?" | Recovery run over the transitive closure, explicitly labeled a locally stable heuristic, never full-market-stable (ANCHOR_ALLOCATION_ENGINE.md §13) |
+| "What happens if a company withdraws an offer after publication?" | Recovery run over the transitive closure, explicitly labeled a locally stable heuristic, never full-market-stable (03-engineering-specs/ALLOCATION_ENGINE.md §13) |
 | "Try it with [an edge-case input]" | Rehearse an empty preference list, a tie, and a zero-data cycle before presenting — crashing on a judge-supplied input is one of the most cited reasons strong SIH teams lose |
 
 ---
@@ -210,7 +210,7 @@ Your locked stack (Next.js/Vercel, FastAPI/Render, PostgreSQL+pgvector, APSchedu
 |---|---|
 | Slide 1 — Title/Problem | §1 above + the companion problem-statement document's §5 reframed one-liner |
 | Slide 2 — Idea, Solution, Uniqueness | §4 (competitive) + §12 (USP) |
-| Slide 3 — Technical Approach | Unchanged — your existing ANCHOR_ARCHITECTURE.md / ANCHOR_ALLOCATION_ENGINE.md content already carries this slide |
+| Slide 3 — Technical Approach | Unchanged — your existing 02-architecture/ARCHITECTURE.md / 03-engineering-specs/ALLOCATION_ENGINE.md content already carries this slide |
 | Slide 4 — Feasibility & Viability | §2 (business model) + §5 (cost) + §9 (risk register) |
 | Slide 5 — Impact & Benefits | §3 (market) + §6 (GTM) + §7 (roadmap) + §8 (impact) + §11 (government integration) |
 | Slide 6 — Research & References | §10, directly |

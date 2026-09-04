@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -122,7 +122,7 @@ Each role sees only what Part 3's role table grants it. No screen below is reach
 - **Inputs:** none (read-only).
 - **Outputs:** allocation status; if matched, priority tier is shown — **never "confidence."**
 - **Actions:** view only.
-- **States:** mirrors the allocation lifecycle (see ANCHOR_STATE_MACHINES.md).
+- **States:** mirrors the allocation lifecycle (see 02-architecture/STATE_MACHINES.md).
 - **Empty state:** "not yet allocated" prior to a run.
 - **Error state:** N/A (read-only).
 - **Loading state:** status loading.

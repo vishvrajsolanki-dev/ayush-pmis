@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -68,9 +68,9 @@ Every step above runs entirely on synthetic data; no external dependency is requ
 
 ## Recovery (Not in Core Demo Path)
 
-Recovery is available on request but is not part of the core 12-step sequence (see ANCHOR_TRACEABILITY.md). If shown, it must be labeled a **locally stable heuristic**, never full-market-stable.
+Recovery is available on request but is not part of the core 12-step sequence (see 01-requirements/TRACEABILITY.md). If shown, it must be labeled a **locally stable heuristic**, never full-market-stable.
 
-## Guardrails for Judge Q&A (see ANCHOR_STATE_MACHINES.md / Master Part 25 for the full non-claims list)
+## Guardrails for Judge Q&A (see 02-architecture/STATE_MACHINES.md / Master Part 25 for the full non-claims list)
 
 If asked whether the model predicts real hiring outcomes: **no** — it is trained and evaluated entirely on synthetic data; deployment validity is explicitly not assessed.
 

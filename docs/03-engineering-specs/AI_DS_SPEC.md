@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -112,7 +112,7 @@ Brier score, log loss, calibration curve — computed for **every** model versio
 
 `F only → F + heuristic O → F + ML O`, reusing the existing 4-tier baseline-comparison infrastructure. Purpose: measure `O`'s actual incremental contribution over `F` alone — without this, "the ML model" risks being a redundant re-encoding of the existing fit score.
 
-## 12. Leakage Prevention (summary — see ANCHOR_TEST_PLAN.md for test-level detail)
+## 12. Leakage Prevention (summary — see 06-testing/TEST_PLAN.md for test-level detail)
 
 - Cycle-T labels never influence Cycle-T scoring/activation.
 - Label generator never consumes allocation-produced/internal state.
@@ -129,7 +129,7 @@ See §10 — diagnostic only, not part of the activation gate, full protocol pen
 
 ## 15. Public/Demo Terminology
 
-Displayed as **"Opportunity-side selection signal."** "Offer likelihood" is internal/technical naming only — never framed as predicting real employer decisions, per the non-claims in ANCHOR_STATE_MACHINES.md / Master Part 25.
+Displayed as **"Opportunity-side selection signal."** "Offer likelihood" is internal/technical naming only — never framed as predicting real employer decisions, per the non-claims in 02-architecture/STATE_MACHINES.md / Master Part 25.
 
 ## 16. Synthetic Validity vs. Deployment Validity (kept permanently separate)
 

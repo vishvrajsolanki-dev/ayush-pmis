@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -61,7 +61,7 @@ Anchor does not claim to solve employer decision-making itself; any opportunity-
 | Mentor *(Configurable, minimal default)* | Advise assigned candidates | Explicit assignment | No allocation visibility beyond assigned candidates |
 | Administrator / Ministry | Platform governance | Single pre-seeded bootstrap | N/A — full cross-tenant access, fully audited |
 
-All roles operate under the cross-cutting `AuthN → RBAC → object/tenant-authorization → action-authorization → audit` contract (see ANCHOR_SECURITY_PRIVACY.md) — the table above describes intent; the middleware enforces it.
+All roles operate under the cross-cutting `AuthN → RBAC → object/tenant-authorization → action-authorization → audit` contract (see 03-engineering-specs/SECURITY_PRIVACY.md) — the table above describes intent; the middleware enforces it.
 
 ## 6. Product Principles
 
@@ -106,7 +106,7 @@ registration/onboarding
 
 ## 9. Functional Requirements
 
-See ANCHOR_SRS.md for the full FR-001…FR-024 catalogue (canonical source: Master Part 5) and ANCHOR_TRACEABILITY.md for FR → data/API/test mapping. Product-level summary:
+See 01-requirements/SRS.md for the full FR-001…FR-024 catalogue (canonical source: Master Part 5) and 01-requirements/TRACEABILITY.md for FR → data/API/test mapping. Product-level summary:
 
 - **PRD-FR-1** (FR-001, FR-002): Eligibility and fit are computed from structurally disjoint fields — no field feeds both.
 - **PRD-FR-2** (FR-010, FR-011): Priority is a transparent, versioned blend of fit and opportunity signal, frozen at run start.

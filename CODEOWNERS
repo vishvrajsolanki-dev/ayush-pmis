@@ -1,0 +1,14 @@
+# CODEOWNERS
+
+# Backend allocation core - allocation domain owner
+backend/alloc_core/ @TBD-allocation-owner
+
+# Frontend - frontend domain owner
+frontend/ @TBD-frontend-owner
+
+# Documentation - all team reviews
+docs/ @TBD-team
+
+# Root config and decisions - project lead
+*.md @TBD-project-lead
+DECISIONS.md @TBD-project-lead

@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -22,8 +22,8 @@ Reference only — not authoritative
 
 | # | Milestone | Depends on | Deliverable | Acceptance criteria | Testing gate |
 |---|---|---|---|---|---|
-| 1 | Repository/project foundation | — | Repo scaffold, CI, locked stack (Next.js/Vercel, FastAPI/Render, PostgreSQL+pgvector, APScheduler) | Stack matches ANCHOR_ARCHITECTURE.md §1 exactly; no unlocked infra introduced | N/A |
-| 2 | Database/schema | 1 | All entities in ANCHOR_DATA_MODEL.md created | Schema matches entity catalogue field-for-field; `allocation_snapshots` write-once enforced at DB level | ST-01 |
+| 1 | Repository/project foundation | — | Repo scaffold, CI, locked stack (Next.js/Vercel, FastAPI/Render, PostgreSQL+pgvector, APScheduler) | Stack matches 02-architecture/ARCHITECTURE.md §1 exactly; no unlocked infra introduced | N/A |
+| 2 | Database/schema | 1 | All entities in 02-architecture/DATA_MODEL.md created | Schema matches entity catalogue field-for-field; `allocation_snapshots` write-once enforced at DB level | ST-01 |
 | 3 | Authentication & authorization | 2 | `AuthN → RBAC → object/tenant-authz → action-authz → audit` middleware | Applied uniformly to every endpoint stub; no ownership-only list-query shortcut | SEC-01…SEC-05 |
 | 4 | Synthetic data generator | 3 | Cycle-driven generator, ≥3 latent regimes + noise term, versioned (`generator_version`, `dataset_version`) | Generates full eligible-pair universe per cycle; label-generator feature contract enforced | LT-02, CT-03 |
 | 5 | Candidate/opportunity/application flows | 4 | Registration, profile/evidence, verification, opportunity posting, preferences | Cap-5 evidence enforced; preferences never system-modified | UT-05, AT-04 |
@@ -34,9 +34,9 @@ Reference only — not authoritative
 | 10 | Governance | 9 | Allocation state machine, override flow | Every override produces distinct linked records; never inherits DA stability label | STT-04 |
 | 11 | Recovery | 10 (published allocations must exist to recover from) | Recovery engine, queue invariant | Transitive closure correctness; ≤1 active/candidate/generation | RT-01…RT-05 |
 | 12 | Analytics | outcomes accumulating over cycles | Peer-institution aggregates | Sample-size ≥10 gate enforced before display | — |
-| 13 | UI integration | all backend milestones | Role-scoped screens per ANCHOR_UX_SPEC.md | Non-claims wording rules (Part 25) honored on every screen | DT-01…DT-03 |
-| 14 | End-to-end demo | 13 | Full 12-step demo path (ANCHOR_DEMO_SCRIPT.md) | Runs green on synthetic data, no external dependency | E2E-01 |
-| 15 | Verification and polish | 14 | Full test suite green | Every FR (ANCHOR_SRS.md) maps to a passing test | Full ANCHOR_TEST_PLAN.md suite |
+| 13 | UI integration | all backend milestones | Role-scoped screens per 04-ux/UX_SPEC.md | Non-claims wording rules (Part 25) honored on every screen | DT-01…DT-03 |
+| 14 | End-to-end demo | 13 | Full 12-step demo path (07-demo/DEMO_SCRIPT.md) | Runs green on synthetic data, no external dependency | E2E-01 |
+| 15 | Verification and polish | 14 | Full test suite green | Every FR (01-requirements/SRS.md) maps to a passing test | Full 06-testing/TEST_PLAN.md suite |
 
 ## Sequencing Rationale (preserved from the Master)
 
@@ -59,7 +59,7 @@ This ordering follows the dependency chain above. If implementation reveals a be
 
 ## Testing Gates
 
-No milestone is considered complete until its corresponding test IDs (ANCHOR_TEST_PLAN.md) pass. Milestone 15 requires the full suite green, with FR → test traceability closed (ANCHOR_TRACEABILITY.md).
+No milestone is considered complete until its corresponding test IDs (06-testing/TEST_PLAN.md) pass. Milestone 15 requires the full suite green, with FR → test traceability closed (01-requirements/TRACEABILITY.md).
 
 ## Explicit Non-Scope for This Plan
 

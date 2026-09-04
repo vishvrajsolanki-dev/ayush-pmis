@@ -5,7 +5,7 @@ Purpose:   Ground ANCHOR in the actual, verified SIH26044 problem statement —
            not an assumed one.
 Status:    New. Corrects a domain assumption in earlier gap-analysis work.
 Relation
-to Master: Additive only. Nothing in ANCHOR_MASTER_DESIGN.md or the 15
+to Master: Additive only. Nothing in 00-product/MASTER_DESIGN.md or the 15
            derived documents is edited by this file — see §4.
 ```
 
@@ -39,7 +39,7 @@ All three independently-scraped sources agree on: **PS code, exact title text, a
 
 ## 2. TWO HONEST DISCREPANCIES — DO NOT PAPER OVER THESE
 
-Following ANCHOR's own documentation discipline (never invent detail the source doesn't give — see ANCHOR_DOCUMENTATION_AUDIT.md's own "no invented figures" standard), two things are flagged rather than resolved by guessing:
+Following ANCHOR's own documentation discipline (never invent detail the source doesn't give — see 08-audit/DOCUMENTATION_AUDIT.md's own "no invented figures" standard), two things are flagged rather than resolved by guessing:
 
 **(a) Theme classification is inconsistent across sources.**
 - The BlinkNBuild Master Catalogue lists SIH26044 under theme **"Smart Automation."**
@@ -77,11 +77,11 @@ This is the most consequential correction from this research: **the sponsoring m
 
 ### 3.3 What actually needs adapting in ANCHOR's `E`/`F` inputs (illustrative, not a Master change)
 
-The Master's `E`/`F` definitions are already written generically enough to absorb this without modification — ANCHOR_ALLOCATION_ENGINE.md §2 defines `E` as "mandatory criteria only (degree/track, availability, mandatory certification, quota-category)" and `F` as "skill/semantic overlap ... location/sector compatibility." These fields were never hardcoded to an engineering-specific vocabulary. What changes is only the **populated content** of those fields for this domain, e.g.:
+The Master's `E`/`F` definitions are already written generically enough to absorb this without modification — 03-engineering-specs/ALLOCATION_ENGINE.md §2 defines `E` as "mandatory criteria only (degree/track, availability, mandatory certification, quota-category)" and `F` as "skill/semantic overlap ... location/sector compatibility." These fields were never hardcoded to an engineering-specific vocabulary. What changes is only the **populated content** of those fields for this domain, e.g.:
 - `E` mandatory criteria would plausibly include: BAMS/BHMS/BUMS/BSMS degree-track match, completion of mandatory clinical/Panchakarma internship hours (an AYUSH-specific accreditation requirement, analogous to how the generic spec already treats "mandatory certification"), NCISM/NCH registration status where applicable.
 - `F` graded skill overlap would plausibly include: specific therapeutic specialization (e.g., Panchakarma, Kayachikitsa, Rasashastra) semantic overlap with a wellness center's or manufacturer's posted requirements, exactly as the generic "skill/semantic overlap" sub-factor is already specified to work.
 
-**This is a configuration/data question, not an architecture question** — and is explicitly the kind of decision the Master already delegates to implementation (ANCHOR_ARCHITECTURE.md §22's Locked-vs-Derived table: "exact module boundaries and their internal decomposition" is Derived, not Locked). No ADR needs reopening.
+**This is a configuration/data question, not an architecture question** — and is explicitly the kind of decision the Master already delegates to implementation (02-architecture/ARCHITECTURE.md §22's Locked-vs-Derived table: "exact module boundaries and their internal decomposition" is Derived, not Locked). No ADR needs reopening.
 
 ---
 
@@ -91,14 +91,14 @@ Each of the 15 uploaded documents was re-read specifically against this new Mini
 
 **No original ANCHOR document contains a contradiction that requires a change.** Specifically:
 
-- **ANCHOR_LATEST_IDEA.md, ANCHOR_PRD.md, ANCHOR_SRS.md** — describe "Institution," "Company," "Student," "Recruiter" generically throughout; never assert an engineering-only or IT-only domain. No line requires editing.
-- **ANCHOR_ALLOCATION_ENGINE.md, ANCHOR_AI_DS_SPEC.md, ANCHOR_DATA_MODEL.md** — `E`/`F`/`O` are defined at the level of "mandatory criteria," "skill overlap," "sector compatibility" — domain-neutral by design (confirmed in §3.3 above). No line requires editing.
-- **ANCHOR_ADRS.md** — ADR-01's JoSAA comparison remains valid: JoSAA is cited as a *mechanism*-level precedent (candidate-proposing DA at government scale), not a claim that ANCHOR serves the engineering-admissions domain. This stays accurate regardless of which ministry sponsors the PS. No line requires editing.
-- **ANCHOR_ARCHITECTURE.md, ANCHOR_API_SPEC.md, ANCHOR_SECURITY_PRIVACY.md, ANCHOR_STATE_MACHINES.md, ANCHOR_TEST_PLAN.md, ANCHOR_TRACEABILITY.md, ANCHOR_IMPLEMENTATION_PLAN.md, ANCHOR_UX_SPEC.md, ANCHOR_DEMO_SCRIPT.md, ANCHOR_DOCUMENTATION_AUDIT.md** — all domain-neutral in the same way; the Documentation Audit's own PASS verdict is unaffected because nothing it verified was a domain-specific claim.
+- **00-product/PRODUCT_NARRATIVE.md, 00-product/PRD.md, 01-requirements/SRS.md** — describe "Institution," "Company," "Student," "Recruiter" generically throughout; never assert an engineering-only or IT-only domain. No line requires editing.
+- **03-engineering-specs/ALLOCATION_ENGINE.md, 03-engineering-specs/AI_DS_SPEC.md, 02-architecture/DATA_MODEL.md** — `E`/`F`/`O` are defined at the level of "mandatory criteria," "skill overlap," "sector compatibility" — domain-neutral by design (confirmed in §3.3 above). No line requires editing.
+- **02-architecture/ADRS.md** — ADR-01's JoSAA comparison remains valid: JoSAA is cited as a *mechanism*-level precedent (candidate-proposing DA at government scale), not a claim that ANCHOR serves the engineering-admissions domain. This stays accurate regardless of which ministry sponsors the PS. No line requires editing.
+- **02-architecture/ARCHITECTURE.md, 03-engineering-specs/API_SPEC.md, 03-engineering-specs/SECURITY_PRIVACY.md, 02-architecture/STATE_MACHINES.md, 06-testing/TEST_PLAN.md, 01-requirements/TRACEABILITY.md, 05-planning/IMPLEMENTATION_PLAN.md, 04-ux/UX_SPEC.md, 07-demo/DEMO_SCRIPT.md, 08-audit/DOCUMENTATION_AUDIT.md** — all domain-neutral in the same way; the Documentation Audit's own PASS verdict is unaffected because nothing it verified was a domain-specific claim.
 
 **Conclusion: zero edits to the 15 original documents are needed or made.** This is not a gap — it is confirmation that the Master's original discipline (never hardcoding an unstated domain assumption into E/F/O, ADRs, or the data model) was the right call, and it is exactly what makes this ministry correction low-cost to absorb.
 
-**What DID need correction, and has been corrected:** the previously delivered `ANCHOR_SIH_GAP_ANALYSIS_AND_ANSWERS.md` (a supplementary document I generated, not part of your original 15) assumed a generic/AICTE-style engineering-education framing in three places — market sizing (used all-India AISHE higher-ed figures), competitive analysis (used generic placement-portal competitors), and government-integration narrative (named AICTE/PM Internship Scheme/NCS as the primary channel). Those three sections are superseded by the corrected, Ministry-of-Ayush-grounded versions in the companion document **ANCHOR_SIH_FINAL_MASTER_ANSWERS.md**. Treat that new document as authoritative going forward; the original gap-analysis document's *structure* (the 15-question framework, the risk register, the references list, the Q&A script) remains valid and is carried forward unchanged, since none of that content was domain-specific.
+**What DID need correction, and has been corrected:** the previously delivered `ANCHOR_SIH_GAP_ANALYSIS_AND_ANSWERS.md` (a supplementary document I generated, not part of your original 15) assumed a generic/AICTE-style engineering-education framing in three places — market sizing (used all-India AISHE higher-ed figures), competitive analysis (used generic placement-portal competitors), and government-integration narrative (named AICTE/PM Internship Scheme/NCS as the primary channel). Those three sections are superseded by the corrected, Ministry-of-Ayush-grounded versions in the companion document **00-product/SIH_MASTER_ANSWERS.md**. Treat that new document as authoritative going forward; the original gap-analysis document's *structure* (the 15-question framework, the risk register, the references list, the Q&A script) remains valid and is carried forward unchanged, since none of that content was domain-specific.
 
 ---
 
@@ -106,4 +106,4 @@ Each of the 15 uploaded documents was re-read specifically against this new Mini
 
 > *"India's AYUSH academia and AYUSH industry currently have no structured, mechanism-grounded system connecting verified student skill evidence to real internship/placement capacity — matching today is manual, opaque, and disconnected, exactly the gap SIH26044 (Ministry of Ayush) asks to close."*
 
-This sentence is deliberately conservative: it restates the verified PS title (§1) plus the two-clause problem framing your own ANCHOR_LATEST_IDEA.md §2 already argues in general terms ("fragmented, low-fidelity channels... manual... naively automated"), now pointed at the correct, verified sponsoring domain instead of an assumed one.
+This sentence is deliberately conservative: it restates the verified PS title (§1) plus the two-clause problem framing your own 00-product/PRODUCT_NARRATIVE.md §2 already argues in general terms ("fragmented, low-fidelity channels... manual... naively automated"), now pointed at the correct, verified sponsoring domain instead of an assumed one.

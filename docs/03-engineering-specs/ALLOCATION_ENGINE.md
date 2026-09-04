@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -24,7 +24,7 @@ Only pairs with `E(c,i)=1` enter the matching graph. `E` is computed from mandat
 
 - **`E(c,i) ∈ {0,1}`** — exclusive binary gate (§6.1). Never feeds `F`. Dual-purpose-field rule: a real-world attribute with both a hard and soft sense is represented as two separate fields, never one serving both.
 - **`F(c,i) ∈ [0,1]`** — computed only for `E=1` pairs; post-eligibility graded factors (skill/semantic overlap weighted by evidence — self-reported 1.0×, institution-verified 2.0× — location/sector compatibility). Never a function of `E`'s pass/fail outcome beyond gating whether `F` is computed at all.
-- **`O(c,i) ∈ [0,1]`** — frozen model score or `HEURISTIC_FALLBACK`, per the activation gate (ANCHOR_AI_DS_SPEC.md). `O_offer` (`OFFER_EXTENDED`) is the sole Phase-1 target.
+- **`O(c,i) ∈ [0,1]`** — frozen model score or `HEURISTIC_FALLBACK`, per the activation gate (03-engineering-specs/AI_DS_SPEC.md). `O_offer` (`OFFER_EXTENDED`) is the sole Phase-1 target.
 
 ## 3. Priority
 
@@ -69,11 +69,11 @@ Once a run enters execution, `E`, `F`, `O`, `Priority(c,i)`, opportunity capacit
 
 ## 9. Snapshots
 
-`AllocationSnapshot` (immutable): `candidate_subject_token`, opportunity_state, preferences, eligibility_results, capacities, scores, `model_hash`, version fields (`algorithm_version`, `calibration_version`, `dataset_version`, `generator_version`), actual tiebreak values used, `policy_alpha`, `random_seed`. Both `snapshot_blob` and `snapshot_hash` required. Once written, never modified. `subject_identity_mapping` is a separate, mutable table (see ANCHOR_SECURITY_PRIVACY.md).
+`AllocationSnapshot` (immutable): `candidate_subject_token`, opportunity_state, preferences, eligibility_results, capacities, scores, `model_hash`, version fields (`algorithm_version`, `calibration_version`, `dataset_version`, `generator_version`), actual tiebreak values used, `policy_alpha`, `random_seed`. Both `snapshot_blob` and `snapshot_hash` required. Once written, never modified. `subject_identity_mapping` is a separate, mutable table (see 03-engineering-specs/SECURITY_PRIVACY.md).
 
 ## 10. Publication
 
-Governed by the human-governance state machine (ANCHOR_STATE_MACHINES.md): `DRAFT → PROPOSED → UNDER_REVIEW → APPROVED → PUBLISHED`, or `→ OVERRIDDEN → VALIDATED → PUBLISHED`.
+Governed by the human-governance state machine (02-architecture/STATE_MACHINES.md): `DRAFT → PROPOSED → UNDER_REVIEW → APPROVED → PUBLISHED`, or `→ OVERRIDDEN → VALIDATED → PUBLISHED`.
 
 ## 11. Overrides
 

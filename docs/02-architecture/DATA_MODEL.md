@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -52,7 +52,7 @@ Reference only — not authoritative
 
 - One row per DA execution for a given cycle.
 - `allocation_generation` links a run to its lineage of recovery runs.
-- Scores, capacities, preferences, and version references are **immutable for the duration of execution** (freeze-at-run-start invariant, FR-011) — this is an execution-window property, not a general table mutability rule; the row's `status` field still transitions per the governance state machine (ANCHOR_STATE_MACHINES.md).
+- Scores, capacities, preferences, and version references are **immutable for the duration of execution** (freeze-at-run-start invariant, FR-011) — this is an execution-window property, not a general table mutability rule; the row's `status` field still transitions per the governance state machine (02-architecture/STATE_MACHINES.md).
 - Must carry `outcome_signal_source: ML | HEURISTIC_FALLBACK` per run.
 
 ### 2.2 `allocation_generations`
@@ -63,7 +63,7 @@ Reference only — not authoritative
 ### 2.3 `allocations`
 
 - A single candidate–opportunity match belonging to exactly one `run_id`.
-- `state` follows the allocation lifecycle (ANCHOR_STATE_MACHINES.md): `DRAFT → PROPOSED → ... → PUBLISHED → ACCEPTED / REJECTED-VACATED`.
+- `state` follows the allocation lifecycle (02-architecture/STATE_MACHINES.md): `DRAFT → PROPOSED → ... → PUBLISHED → ACCEPTED / REJECTED-VACATED`.
 
 ### 2.4 `recovery_queue`
 
@@ -74,7 +74,7 @@ Reference only — not authoritative
 ### 2.5 `model_versions`
 
 - Immutable once written: `id`, `model_hash` never change post-creation.
-- `feature_contract_ref` ties the artifact to the locked `O` feature contract (primitives only — see ANCHOR_AI_DS_SPEC.md) for leakage-check auditing.
+- `feature_contract_ref` ties the artifact to the locked `O` feature contract (primitives only — see 03-engineering-specs/AI_DS_SPEC.md) for leakage-check auditing.
 
 ### 2.6 `calibration_artifacts`
 
@@ -94,7 +94,7 @@ Reference only — not authoritative
 ### 2.9 `subject_identity_mapping`
 
 - Separate, mutable table: `candidate_subject_token → student_id`.
-- Access-controlled at a stricter tier than general snapshot access (see ANCHOR_SECURITY_PRIVACY.md) — treated as a distinct, higher-sensitivity authorization tier.
+- Access-controlled at a stricter tier than general snapshot access (see 03-engineering-specs/SECURITY_PRIVACY.md) — treated as a distinct, higher-sensitivity authorization tier.
 - The **only** table touched by a deletion/pseudonymization request. `allocation_snapshots` is never touched by such a request — its immutability and reproducibility guarantee must never be broken by a privacy action.
 
 ### 2.10 `outcomes`
@@ -135,4 +135,4 @@ erDiagram
 
 ## 4. Cross-Reference
 
-Full lifecycle/state semantics for `allocation_runs.status`, `recovery_queue.status`, `verification.verification_tier`, and profile visibility fields: see ANCHOR_STATE_MACHINES.md. Endpoint-level read/write access per table: see ANCHOR_API_SPEC.md and ANCHOR_SECURITY_PRIVACY.md.
+Full lifecycle/state semantics for `allocation_runs.status`, `recovery_queue.status`, `verification.verification_tier`, and profile visibility fields: see 02-architecture/STATE_MACHINES.md. Endpoint-level read/write access per table: see 03-engineering-specs/API_SPEC.md and 03-engineering-specs/SECURITY_PRIVACY.md.

@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -60,16 +60,16 @@ This SRS covers the Main SIH Round's Intelligent Allocation Engine only: eligibi
 | Security | Every endpoint enforces `AuthN → RBAC → object/tenant-authorization → action-authorization → audit` uniformly (§13). |
 | Privacy | Direct identity excluded from allocation snapshots; identity mapping access-controlled at a higher tier than general snapshot access (§12). |
 | Performance | Not independently specified in the Master; no numeric SLA is asserted here — do not invent one. |
-| State behavior | Every transition confined to the state machines in ANCHOR_STATE_MACHINES.md (Part 20) — no undocumented transition. |
+| State behavior | Every transition confined to the state machines in 02-architecture/STATE_MACHINES.md (Part 20) — no undocumented transition. |
 | Model behavior | VALIDATION is the sole activation gate; TEST (Cycle T) never activates a model — it only scores under an already-frozen configuration (§7). |
 | Allocation behavior | Capacity respected exactly; unmatched is a legitimate terminal state; stability claim scoped to the exact declared-preference profile under the DA mechanism (§6.5). |
-| Failure behavior | See ANCHOR_TEST_PLAN.md / Master Part 21 — insufficient data, failed activation, and worker crashes are all defined states, not undefined errors. |
+| Failure behavior | See 06-testing/TEST_PLAN.md / Master Part 21 — insufficient data, failed activation, and worker crashes are all defined states, not undefined errors. |
 | Observability | Structured logs per job/request; correlation IDs (`allocation_generation`, `run_id`, `model_version`, `snapshot_hash`) propagated through logs (§22). |
 | Auditability | Every authorization-relevant, state-changing event logged with actor, action, object, tenant, timestamp (§13, §22). |
 
 ## 4. Cross-References
 
-- Allocation-mechanism detail: ANCHOR_ALLOCATION_ENGINE.md
-- Data contracts per FR: ANCHOR_DATA_MODEL.md
-- Endpoint-level authorization: ANCHOR_API_SPEC.md, ANCHOR_SECURITY_PRIVACY.md
-- Full FR → test mapping: ANCHOR_TRACEABILITY.md, ANCHOR_TEST_PLAN.md
+- Allocation-mechanism detail: 03-engineering-specs/ALLOCATION_ENGINE.md
+- Data contracts per FR: 02-architecture/DATA_MODEL.md
+- Endpoint-level authorization: 03-engineering-specs/API_SPEC.md, 03-engineering-specs/SECURITY_PRIVACY.md
+- Full FR → test mapping: 01-requirements/TRACEABILITY.md, 06-testing/TEST_PLAN.md

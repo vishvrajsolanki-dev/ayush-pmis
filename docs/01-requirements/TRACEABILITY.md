@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -18,7 +18,7 @@ Chain: **Master Decision → Requirement → Data → API/Job → Test → Demo 
 
 ---
 
-| Design Decision | FR (ANCHOR_SRS.md) | Data (ANCHOR_DATA_MODEL.md) | API/Job (ANCHOR_API_SPEC.md / ANCHOR_IMPLEMENTATION_PLAN.md) | Test Category (ANCHOR_TEST_PLAN.md) | Demo Evidence (ANCHOR_DEMO_SCRIPT.md) |
+| Design Decision | FR (01-requirements/SRS.md) | Data (02-architecture/DATA_MODEL.md) | API/Job (03-engineering-specs/API_SPEC.md / 05-planning/IMPLEMENTATION_PLAN.md) | Test Category (06-testing/TEST_PLAN.md) | Demo Evidence (07-demo/DEMO_SCRIPT.md) |
 |---|---|---|---|---|---|
 | E/F separation | FR-001, FR-002 | `opportunities` (requirements), `students`/`skill_claims` | Eligibility/fit computation (in `allocation_run` job) | CT-01, UT-01, UT-02 | Step 3–4 |
 | O feature contract | FR-003 | `model_versions` | `model_train` job | CT-02, LT-03 | Step 5 |
@@ -29,7 +29,7 @@ Chain: **Master Decision → Requirement → Data → API/Job → Test → Demo 
 | DA mechanism | FR-012 | `allocation_runs`, `allocations` | `POST /admin/cycles/{cycle}/allocation-runs`, `allocation_run` job | AT-01…AT-05 | Step 8 |
 | Snapshot | FR-015 | `allocation_snapshots`, `subject_identity_mapping` | `allocation_run` job | ST-01…ST-04 | Step 10 |
 | Privacy (identity separation) | FR-015 | `subject_identity_mapping` | *(deletion endpoint — not yet enumerated, Deferred detail)* | ST-04, SEC | Step 10 |
-| Authorization (AuthN→RBAC→...→audit) | FR-024 | `audits` | All endpoints (ANCHOR_API_SPEC.md), cross-cutting middleware | SEC-01…SEC-05 | Step 9 |
+| Authorization (AuthN→RBAC→...→audit) | FR-024 | `audits` | All endpoints (03-engineering-specs/API_SPEC.md), cross-cutting middleware | SEC-01…SEC-05 | Step 9 |
 | Verification | FR-018 | `evidence`, `verification` | `POST /institutions/{id}/verify-evidence/{evidence_id}` | STT-06 | Step 1 |
 | Recovery | FR-014 | `recovery_queue`, `allocation_generations` | `recovery_processing` job | RT-01…RT-05 | *(not in core demo path; available on request)* |
 | Deterministic tiebreaking | FR-020 | `students.tiebreak_key` | `allocation_run` job | AT-05, UT-04 | Step 6 |

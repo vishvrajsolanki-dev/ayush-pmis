@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -184,8 +184,8 @@ Reference only — not authoritative
 
 ## Endpoints Not Enumerated (Deferred Detail)
 
-- A deletion/pseudonymization endpoint acting on `subject_identity_mapping` is required by FR-015/Part 12 but its exact path is not specified in the Master — Deferred detail (see ANCHOR_TRACEABILITY.md, Privacy row).
-- No endpoints exist for `O_shortlist`/`O_interview`, unseen-opportunity/company evaluation, or `CONTACT_SHARED` — all Phase 2 (see ANCHOR_PRD.md §14). Do not add these endpoints to Phase-1 implementation.
+- A deletion/pseudonymization endpoint acting on `subject_identity_mapping` is required by FR-015/Part 12 but its exact path is not specified in the Master — Deferred detail (see 01-requirements/TRACEABILITY.md, Privacy row).
+- No endpoints exist for `O_shortlist`/`O_interview`, unseen-opportunity/company evaluation, or `CONTACT_SHARED` — all Phase 2 (see 00-product/PRD.md §14). Do not add these endpoints to Phase-1 implementation.
 
 ## Naming Consistency
 

@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -80,7 +80,7 @@ This is the stated privacy scope for the synthetic prototype — not a stronger 
 
 ## 9. Deletion / Pseudonymization
 
-Acts **only** on `subject_identity_mapping`. `AllocationSnapshot` is never touched — its immutability/reproducibility guarantee is never broken by a privacy request. *(The exact deletion-endpoint path is not enumerated in the Master — Deferred detail, see ANCHOR_API_SPEC.md.)*
+Acts **only** on `subject_identity_mapping`. `AllocationSnapshot` is never touched — its immutability/reproducibility guarantee is never broken by a privacy request. *(The exact deletion-endpoint path is not enumerated in the Master — Deferred detail, see 03-engineering-specs/API_SPEC.md.)*
 
 ## 10. Reproducibility
 

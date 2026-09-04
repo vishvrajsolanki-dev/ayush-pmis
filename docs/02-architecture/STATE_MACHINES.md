@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -14,7 +14,7 @@ Historical review documents:
 Reference only — not authoritative
 ```
 
-No transition outside the graphs below is reachable in any workflow. Every transition's audit event, where applicable, is drawn from ANCHOR_API_SPEC.md.
+No transition outside the graphs below is reachable in any workflow. Every transition's audit event, where applicable, is drawn from 03-engineering-specs/API_SPEC.md.
 
 ---
 
@@ -75,7 +75,7 @@ PUBLISHED → ACCEPTED
 | `PROPOSED` | Enters review | System/Admin | — | `UNDER_REVIEW` | — | — |
 | `UNDER_REVIEW` | Admin approves | Admin-only | — | `APPROVED → PUBLISHED` | — | `allocation_approved` |
 | `UNDER_REVIEW` | Admin overrides | Admin-only | Mandatory reason | `OVERRIDDEN → VALIDATED → PUBLISHED` | Original assignment, decision, reason, admin, validation result stored as distinct linked records; never inherits DA stability label | `allocation_overridden` |
-| `PROPOSED` (pre-publication) | Any enumerated invalidation trigger fires | System | Trigger match (see ANCHOR_SECURITY_PRIVACY.md §11) | `INVALIDATED` | Requires a brand-new run — never in-place repair | — |
+| `PROPOSED` (pre-publication) | Any enumerated invalidation trigger fires | System | Trigger match (see 03-engineering-specs/SECURITY_PRIVACY.md §11) | `INVALIDATED` | Requires a brand-new run — never in-place repair | — |
 | `PUBLISHED` | Candidate accepts | Student (self) | — | `ACCEPTED` | — | — |
 | `PUBLISHED` | Candidate/opportunity drops out | — | — | `REJECTED/VACATED` | Triggers recovery run | — |
 

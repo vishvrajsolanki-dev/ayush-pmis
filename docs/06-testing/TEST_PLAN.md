@@ -2,10 +2,10 @@
 
 ```text
 Source of Truth:
-ANCHOR_MASTER_DESIGN.md
+00-product/MASTER_DESIGN.md
 
 Product Narrative:
-ANCHOR_LATEST_IDEA.md
+00-product/PRODUCT_NARRATIVE.md
 
 Status:
 Derived downstream specification
@@ -18,7 +18,7 @@ Reference only — not authoritative
 
 ## 1. Test Strategy
 
-Every FR in ANCHOR_SRS.md (FR-001…FR-024) must map to at least one test below. Full FR → test mapping: ANCHOR_TRACEABILITY.md. Categories mirror Master Part 23.
+Every FR in 01-requirements/SRS.md (FR-001…FR-024) must map to at least one test below. Full FR → test mapping: 01-requirements/TRACEABILITY.md. Categories mirror Master Part 23.
 
 ## 2. Unit Tests (UT)
 
@@ -36,8 +36,8 @@ Every FR in ANCHOR_SRS.md (FR-001…FR-024) must map to at least one test below.
 |---|---|
 | CT-01 | `E`/`F` separation — dual-purpose-field rule never violated (a field feeding `E` never also feeds `F`) |
 | CT-02 | `O`'s feature contract — only primitives (raw skill-overlap count, categorical degree/track match, raw location distance, categorical sector match); `F`'s derived score and preference rank excluded |
-| CT-03 | Label generator's feature contract — allowed/forbidden inputs per ANCHOR_AI_DS_SPEC.md §4 |
-| CT-04 | Schema validation on all API payloads (ANCHOR_API_SPEC.md) |
+| CT-03 | Label generator's feature contract — allowed/forbidden inputs per 03-engineering-specs/AI_DS_SPEC.md §4 |
+| CT-04 | Schema validation on all API payloads (03-engineering-specs/API_SPEC.md) |
 
 ## 4. Temporal Tests (TT)
 
@@ -92,7 +92,7 @@ Every FR in ANCHOR_SRS.md (FR-001…FR-024) must map to at least one test below.
 
 | ID | Covers |
 |---|---|
-| STT-01 | Account lifecycle — no transition outside ANCHOR_STATE_MACHINES.md §1 |
+| STT-01 | Account lifecycle — no transition outside 02-architecture/STATE_MACHINES.md §1 |
 | STT-02 | Opportunity lifecycle — §2 |
 | STT-03 | Application lifecycle — §3 |
 | STT-04 | Allocation lifecycle — §4 (including invalidation triggers) |
@@ -115,7 +115,7 @@ Every FR in ANCHOR_SRS.md (FR-001…FR-024) must map to at least one test below.
 
 | ID | Covers |
 |---|---|
-| E2E-01 | Full Part 24 demo path (see ANCHOR_DEMO_SCRIPT.md), synthetic data only, must run green before any presentation |
+| E2E-01 | Full Part 24 demo path (see 07-demo/DEMO_SCRIPT.md), synthetic data only, must run green before any presentation |
 
 ## 12. Demo Tests (DT)
 
@@ -151,4 +151,4 @@ Every FR in ANCHOR_SRS.md (FR-001…FR-024) must map to at least one test below.
 | Tenant isolation | SEC-02, SEC-05 |
 | Override auditability | STT-04, SEC-05 |
 
-Every requirement in ANCHOR_SRS.md maps to at least one test category above — see ANCHOR_TRACEABILITY.md for the complete per-FR mapping.
+Every requirement in 01-requirements/SRS.md maps to at least one test category above — see 01-requirements/TRACEABILITY.md for the complete per-FR mapping.
