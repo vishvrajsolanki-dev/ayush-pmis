@@ -18,7 +18,7 @@ Reference only — not authoritative
 
 ## 1. System Scope
 
-This SRS covers the Main SIH Round's Intelligent Allocation Engine only: eligibility/fit/opportunity-signal computation, candidate-proposing Deferred Acceptance, recovery, human governance, snapshotting, trust/verification, and the cross-cutting authorization/audit layer. The College Round's one-sided ranking system is out of scope (Master Part 1, Part 26).
+This SRS covers the Main SIH Round's Intelligent Allocation Engine only: eligibility/fit/opportunity-signal computation, candidate-proposing Deferred Acceptance, recovery, human governance, snapshotting, trust/verification, and the cross-cutting authorization/audit layer. The College Round's one-sided ranking system is `RETIRED — OUT OF ACTIVE SCOPE` (see DECISIONS.md D-012), not merely out-of-document-scope — no College Round implementation exists or is planned. Main SIH Round is the sole active project.
 
 ## 2. Functional Requirements
 

@@ -48,15 +48,15 @@ Each cycle of this loop produces structured data — which skills mattered, whic
 
 ---
 
-## 5. Two-Stage Strategy
+## 5. Two-Stage Strategy — `RETIRED — OUT OF ACTIVE SCOPE` (see DECISIONS.md D-012)
 
-Anchor is built and evaluated in two distinct stages, which are not the same system at different scales — they are architecturally different.
+Anchor was originally conceived across two distinct stages. The College Round stage was never executed — no ROADMAP, DECISIONS, or Phase-1/2/3 record references it — and is retired from active scope as of the scope transition logged in D-012. **Main SIH Round is now the sole, primary project direction.** The two subsections below are preserved as historical strategy context, not as a currently active plan.
 
-### College Round
-A simpler, one-sided ranking system: a standalone, explainable matching approach scoped appropriately for a college-level competition round. It does not include the Main Round's two-sided mechanism, opportunity-side learned signal, or governance machinery.
+### College Round *(historical — retired)*
+A simpler, one-sided ranking system: a standalone, explainable matching approach scoped appropriately for a college-level competition round. It does not include the Main Round's two-sided mechanism, opportunity-side learned signal, or governance machinery. **This stage is not part of active scope; no work exists against it.**
 
-### Main SIH Round
-The full ecosystem-scale system: the Intelligent Allocation Engine (below), an Industry ↔ Academia feedback loop, and the deeper allocation, learning, and institutional-governance layers described in this document. The College Round's mechanisms are not assumed to already exist inside the Main Round's scope, and vice versa — the Main Round is a distinct, larger system built for this flagship.
+### Main SIH Round *(active — primary project)*
+The full ecosystem-scale system: the Intelligent Allocation Engine (below), an Industry ↔ Academia feedback loop, and the deeper allocation, learning, and institutional-governance layers described in this document. The College Round's mechanisms are not assumed to already exist inside the Main Round's scope — the Main Round is a distinct, larger system built for this flagship, and it is the only system currently being built.
 
 ---
 

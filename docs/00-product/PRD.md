@@ -71,16 +71,18 @@ All roles operate under the cross-cutting `AuthN → RBAC → object/tenant-auth
 - Nothing about the AI layer overrides a mandatory (hard-eligibility) requirement.
 - Every proposed allocation passes through human review before publication and can be overridden with a stored, accountable reason.
 
-## 7. College vs. Main SIH Scope
+## 7. College vs. Main SIH Scope — `RETIRED — OUT OF ACTIVE SCOPE`
 
-| | College Round | Main SIH Round |
+**Status note (added at scope transition, see DECISIONS.md D-012):** The College Round track described below was never executed (no ROADMAP, DECISIONS, or Phase-1/2/3 record references it) and is retired from active scope. It is preserved here as historical context only. **Main SIH Round is now the sole primary project direction; this document's Main-Round content is unchanged.**
+
+| | College Round *(historical, retired)* | Main SIH Round *(active — primary)* |
 |---|---|---|
 | Mechanism | Simple, standalone one-sided ranking | Two-sided candidate-proposing DA |
 | Opportunity-side learned signal | None | `O_offer` |
 | Governance machinery | None | Full human-review/override/audit lifecycle |
 | Relationship | Not a subset of the Main Round | Not an extension of the College Round |
 
-Neither round implicitly contains the other's mechanisms; this document specifies the Main SIH Round only.
+Neither round implicitly contains the other's mechanisms; this document specifies the Main SIH Round only. The College Round row above is retained as historical scope-notation, not as a parallel active deliverable.
 
 ## 8. End-to-End Workflow
 

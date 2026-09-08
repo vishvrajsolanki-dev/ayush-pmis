@@ -27,7 +27,7 @@ Items in this document that are *derived engineering structure* rather than expl
 - No `O_shortlist` / `O_interview` implementation — `O_offer` only.
 - No claim that recovery or overridden results carry DA's full stability guarantee.
 
-**College vs Main SIH architecture:** College Round is a simpler, standalone one-sided ranking system, out of scope for this document. Main SIH Round is the full two-sided DA system described here. Neither implicitly contains the other's mechanisms.
+**College vs Main SIH architecture — `RETIRED — OUT OF ACTIVE SCOPE` (see DECISIONS.md D-012):** College Round was a simpler, standalone one-sided ranking system; it was never executed and is retired from active scope. Main SIH Round is the full two-sided DA system described here, and is now the sole active project direction. Neither implicitly contains the other's mechanisms.
 
 **Core principles:** AI predicts; matching decides; constraints protect; humans govern. Hard/soft/learned scoring are three distinct kinds of judgment, never blurred into one number. Every claim about the learned signal is scoped honestly — synthetic validity is demonstrated; deployment validity is not assessed.
 
@@ -142,7 +142,7 @@ registration/onboarding (Student self-service; Institution/Company via PENDING�
    → ecosystem feedback (Cycle T outcomes become eligible TRAIN/CALIBRATION data starting Cycle T+1)
 ```
 
-**College Round** uses a simpler, standalone one-sided ranking flow, not covered by this document.
+**College Round** `RETIRED — OUT OF ACTIVE SCOPE` (see DECISIONS.md D-012) — previously conceived as a simpler, standalone one-sided ranking flow, not covered by this document. No implementation exists or is planned against it; the flow above is the sole active workflow.
 
 ---
 
@@ -185,7 +185,7 @@ registration/onboarding (Student self-service; Institution/Company via PENDING�
 `E(c,i) ∈ {0,1}` — exclusive binary gate; only `E=1` pairs enter the matching graph. Covers mandatory conditions only: degree/track requirement, availability, mandatory certification, quota-category tag where applicable. `E` never feeds `F`. **Dual-purpose field rule:** where a real-world attribute has both a hard and soft sense, it is represented as two explicitly separate fields — one feeding `E`, one feeding `F` — never one field serving both.
 
 ### 6.2 Fit
-`F(c,i) ∈ [0,1]` — post-eligibility graded factors only: skill/semantic overlap, weighted sub-factors per the College-tier soft-factor weighting scheme, location/sector compatibility as a graded signal. `F` never encodes a hard pass/fail condition. Evidence weighting (self-reported `1.0×` / institution-verified `2.0×`) feeds into the skill/semantic-overlap component. `F` is computed independently of, and never a function of, `E`'s pass/fail outcome beyond the fact that `F` is only computed at all for `E=1` pairs.
+`F(c,i) ∈ [0,1]` — post-eligibility graded factors only: skill/semantic overlap, location/sector compatibility as a graded signal, combined per the locked `compute_fit` weighting scheme (weighted geometric mean of skill_overlap / location_match / sector_match; skill capped at 1.0, location/sector scored 1.0 match / 0.7 partial-credit mismatch — see DECISIONS.md D-005, ALLOCATION_ENGINE.md §14.2). *(Resolution note, D-013: this sub-section previously read "weighted sub-factors per the College-tier soft-factor weighting scheme" — a phrase with no supporting definition anywhere in this document set and no relationship to any institution/candidate "tier" concept, which does not exist. It has been corrected to cite the actual locked formula rather than left as an unresolved reference, since D-005 already defines precisely the three sub-factors this sentence describes.)* `F` never encodes a hard pass/fail condition. Evidence weighting (self-reported `1.0×` / institution-verified `2.0×`) feeds into the skill/semantic-overlap component. `F` is computed independently of, and never a function of, `E`'s pass/fail outcome beyond the fact that `F` is only computed at all for `E=1` pairs.
 
 ### 6.3 Opportunity Signal
 `O` is a family: `O_shortlist`, `O_interview`, `O_offer` — genuinely different targets, never treated as interchangeable. Phase 1 locks to `O_offer`, operationalized as `OFFER_EXTENDED ∈ {0,1}`, an observed synthetic event.
@@ -756,7 +756,7 @@ A full cross-document consistency pass was performed before finalizing this Mast
 - **Privacy:** direct-identity exclusion, snapshot linkability admission, identity mapping, deletion/pseudonymization scope — Part 12 consistent with Part 2's definitions and Part 25's non-claims.
 - **Model governance:** activation, frozen evidence, versions, fallback — Parts 6.4, 7, 11 (`validation_evidence` entity) consistent.
 - **Claims:** synthetic validity vs. deployment validity, causal, fairness, independence — Part 25 consistent with Parts 6, 9, 10, 16 wherever those claims are made or explicitly disclaimed.
-- **Scope:** Phase 1 vs Phase 2, College vs Main SIH — Part 26 consistent with Part 1's non-goals and every Part's individual scope notes.
+- **Scope:** Phase 1 vs Phase 2 — Part 26 consistent with Part 1's non-goals and every Part's individual scope notes. *(Correction, D-013: this line previously also claimed "College vs Main SIH — Part 26 consistent," but Part 26 ("Phase Boundaries") only ever defined the Phase 1/Phase 2 boundary — it never independently defined College-vs-Main scope. That distinction lived in Parts 1 and 4, and is now retired per D-012. The mis-citation predates this correction and is fixed here rather than left to imply a check that Part 26 never actually performed.)*
 
 ---
 

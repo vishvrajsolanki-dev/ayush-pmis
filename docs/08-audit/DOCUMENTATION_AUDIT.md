@@ -208,3 +208,4 @@ Every P0 requirement and critical invariant has at least one mapped test. The on
 No re-architecture, no new infrastructure, no new roles, no new endpoints, and no Master-level contradiction were found. Once items 1–3 are applied, the documentation set may be frozen and implementation may begin.
 
 **MASTER → COMPLETE → CONSISTENT → TRACEABLE → IMPLEMENTABLE: confirmed, pending the three fixes above.**
+Phase 1 implemented and verified (see docs/08-audit/PHASE_1_COMPLETION.md) — 21 entities, alembic migration, 5 schema tests, 1 alloc_core test, 6/6 pytest PASS.
