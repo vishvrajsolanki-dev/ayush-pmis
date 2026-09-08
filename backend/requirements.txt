@@ -13,3 +13,4 @@ alembic==1.13.3
 psycopg2-binary==2.9.10
 aiosqlite==0.21.0
 httpx
+asyncpg==0.29.0

@@ -15,6 +15,12 @@ if DATABASE_URL is None and _IS_PRODUCTION:
 if DATABASE_URL is None:
     DATABASE_URL = LOCAL_SQLITE
 
+
+# Async driver fix: production PostgreSQL URL must use asyncpg for create_async_engine
+# Sync Alembic/sqlite paths kept intact; no credentials exposed
+if DATABASE_URL and DATABASE_URL.startswith("postgresql://") and "+asyncpg" not in DATABASE_URL:
+    DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://", 1)
+
 engine = create_async_engine(DATABASE_URL, echo=False)
 AsyncSessionLocal = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 
