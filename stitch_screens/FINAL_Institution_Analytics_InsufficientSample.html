@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anchor Platform - Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#091426",
+                      "inverse-primary": "#bcc7de",
+                      "on-tertiary-fixed-variant": "#564427",
+                      "on-secondary-container": "#57657b",
+                      "inverse-surface": "#2d3133",
+                      "primary-fixed-dim": "#bcc7de",
+                      "secondary-container": "#d5e3fd",
+                      "on-error": "#ffffff",
+                      "background": "#f7f9fb",
+                      "surface-container-low": "#f2f4f6",
+                      "outline": "#75777d",
+                      "primary-fixed": "#d8e3fb",
+                      "on-tertiary-container": "#a38c6a",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-tertiary-fixed": "#271902",
+                      "on-surface-variant": "#45474c",
+                      "surface": "#f7f9fb",
+                      "surface-tint": "#545f73",
+                      "secondary": "#515f74",
+                      "tertiary-fixed": "#fadfb8",
+                      "outline-variant": "#c5c6cd",
+                      "tertiary": "#1e1200",
+                      "surface-bright": "#f7f9fb",
+                      "on-primary-fixed-variant": "#3c475a",
+                      "on-primary-fixed": "#111c2d",
+                      "primary-container": "#1e293b",
+                      "surface-container": "#eceef0",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-secondary-fixed": "#0d1c2f",
+                      "on-background": "#191c1e",
+                      "secondary-fixed": "#d5e3fd",
+                      "surface-container-high": "#e6e8ea",
+                      "on-primary-container": "#8590a6",
+                      "tertiary-fixed-dim": "#ddc39d",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface": "#191c1e",
+                      "surface-variant": "#e0e3e5",
+                      "error": "#ba1a1a",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#3a485c",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#b9c7e0",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#d8dadc",
+                      "tertiary-container": "#35260c",
+                      "on-primary": "#ffffff",
+                      "on-secondary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "gutter": "24px",
+                      "stack-lg": "24px",
+                      "stack-md": "16px",
+                      "container-padding": "32px",
+                      "stack-sm": "8px",
+                      "section-gap": "48px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Public Sans"
+                      ],
+                      "body-lg": [
+                              "Public Sans"
+                      ],
+                      "display-lg": [
+                              "Public Sans"
+                      ],
+                      "body-md": [
+                              "Public Sans"
+                      ],
+                      "headline-md": [
+                              "Public Sans"
+                      ],
+                      "label-sm": [
+                              "Public Sans"
+                      ],
+                      "data-tabular": [
+                              "Public Sans"
+                      ],
+                      "headline-sm": [
+                              "Public Sans"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "data-tabular": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .stripes {
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                #e0e3e5 10px,
+                #e0e3e5 20px
+            );
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg min-h-screen">
+<!-- Side Nav -->
+<nav class="bg-surface-container-low dark:bg-surface-container-highest text-primary dark:text-primary-fixed font-body-md text-body-md h-screen w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline shadow-none z-50">
+<div class="flex flex-col h-full p-stack-lg gap-stack-lg">
+<div class="mb-stack-lg">
+<h1 class="font-display-lg text-display-lg text-primary dark:text-primary-fixed">Anchor Platform</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-unit">Governance &amp; Placement</p>
+</div>
+<ul class="flex flex-col gap-unit flex-grow">
+<li>
+<a class="flex items-center gap-stack-md p-stack-sm text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-[0.98] rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                        Dashboard
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md p-stack-sm bg-secondary-container text-on-secondary-container font-semibold rounded-lg active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+                        Analytics
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md p-stack-sm text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-[0.98] rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+                        Verification Queue
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md p-stack-sm text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-[0.98] rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+                        Student Roster
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md p-stack-sm text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-[0.98] rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+                        Placement Cell
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md p-stack-sm text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-[0.98] rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="business">business</span>
+                        Company Partners
+                    </a>
+</li>
+</ul>
+<div class="mt-auto">
+<a class="flex items-center gap-stack-md p-stack-sm text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-[0.98] rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                        Settings
+                </a>
+</div>
+</div>
+</nav>
+<!-- Top App Bar -->
+<header class="bg-surface-container-lowest dark:bg-surface-container-low text-primary dark:text-primary-fixed font-label-caps text-label-caps h-16 fixed top-0 right-0 left-64 border-b border-outline-variant dark:border-outline shadow-sm z-40">
+<div class="flex justify-between items-center px-container-padding h-full">
+<div class="flex items-center gap-stack-lg">
+<span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">Analytics</span>
+<nav class="hidden md:flex gap-stack-md ml-stack-lg border-l border-outline-variant pl-stack-lg h-8 items-center">
+<a class="text-on-surface-variant hover:text-primary cursor-pointer transition-all duration-200" href="#">Overview</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-semibold" href="#">Allocation Outcomes</a>
+<a class="text-on-surface-variant hover:text-primary cursor-pointer transition-all duration-200" href="#">Trends</a>
+</nav>
+</div>
+<div class="flex items-center gap-stack-lg">
+<button class="text-on-surface-variant hover:bg-surface-container-high p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="h-8 w-px bg-outline-variant mx-unit"></div>
+<button class="font-label-caps text-label-caps text-primary hover:text-on-surface-variant transition-colors uppercase">
+                    Sign Out
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-16 min-h-screen p-container-padding max-w-7xl mx-auto flex flex-col gap-section-gap">
+<!-- Header Section -->
+<header class="flex flex-col gap-stack-sm mt-stack-lg">
+<div class="flex items-center gap-stack-sm text-on-surface-variant font-label-sm text-label-sm">
+<span>Analytics</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span>Allocation Outcomes</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-semibold">Public Policy / Gov</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary">Sector Performance: Public Policy / Gov</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">Review allocation outcomes, historical trends, and demographic breakdowns for the selected sector. Data integrity policies apply to small sample sizes.</p>
+</header>
+<!-- Analytics Grid -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Context Card -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg flex flex-col gap-stack-md shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<h3 class="font-headline-sm text-headline-sm text-primary">Sector Context</h3>
+<dl class="flex flex-col gap-stack-sm font-data-tabular text-data-tabular">
+<div class="flex justify-between py-stack-sm border-b border-surface-container">
+<dt class="text-on-surface-variant">Total Placements (YTD)</dt>
+<dd class="font-semibold text-primary">12</dd>
+</div>
+<div class="flex justify-between py-stack-sm border-b border-surface-container">
+<dt class="text-on-surface-variant">Active Partnerships</dt>
+<dd class="font-semibold text-primary">4</dd>
+</div>
+<div class="flex justify-between py-stack-sm">
+<dt class="text-on-surface-variant">Avg. Allocation Time</dt>
+<dd class="font-semibold text-primary">42 Days</dd>
+</div>
+</dl>
+<div class="mt-auto pt-stack-md">
+<button class="w-full bg-surface-container-low border border-outline-variant text-on-surface-variant font-label-caps text-label-caps py-2 px-4 rounded hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                        Export Summary Report
+                    </button>
+</div>
+</div>
+<!-- Suppressed Data Card -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-[0_1px_2px_rgba(0,0,0,0.05)] flex flex-col">
+<div class="flex justify-between items-center mb-stack-lg">
+<h3 class="font-headline-sm text-headline-sm text-primary">Demographic Outcome Distribution</h3>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+<span class="font-label-sm text-label-sm">Filtered by: YTD</span>
+</div>
+</div>
+<!-- Privacy Wrapper -->
+<div class="flex-grow flex flex-col items-center justify-center bg-surface-container min-h-[300px] rounded-lg border border-outline-variant border-dashed p-stack-lg text-center relative overflow-hidden stripes">
+<!-- overlay to soften stripes -->
+<div class="absolute inset-0 bg-surface-container/70 backdrop-blur-[1px]"></div>
+<div class="relative z-10 flex flex-col items-center gap-stack-md max-w-md bg-surface-container-lowest p-stack-lg rounded-xl shadow-sm border border-outline-variant">
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center text-on-surface-variant mb-unit">
+<span class="material-symbols-outlined" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary">Data Suppressed</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Sample size too small to maintain anonymity and statistical significance.
+                        </p>
+<div class="bg-surface p-stack-sm rounded border border-surface-container-highest w-full mt-stack-sm text-left font-label-sm text-label-sm text-on-surface-variant">
+<span class="font-semibold text-primary block mb-1">Policy Ref: AP-PRIV-04</span>
+                            Groups containing fewer than 15 unique allocation records are automatically suppressed in aggregate reporting views to prevent individual identification.
+                        </div>
+</div>
+</div>
+</div>
+<!-- Bottom Stats Row -->
+<div class="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-gutter mt-stack-lg">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-unit">Overall Cohort Retention</p>
+<div class="flex items-end gap-stack-sm">
+<span class="font-display-lg text-display-lg text-primary">94.2%</span>
+<span class="font-body-md text-body-md text-primary flex items-center bg-surface-container-high px-2 py-1 rounded mb-1">
+<span class="material-symbols-outlined text-[16px] mr-1" data-icon="trending_up">trending_up</span>
+                            +1.2%
+                        </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-unit">Target Alignment Score</p>
+<div class="flex items-end gap-stack-sm">
+<span class="font-display-lg text-display-lg text-primary">B+</span>
+<span class="font-body-md text-body-md text-on-surface-variant bg-surface-container px-2 py-1 rounded mb-1">
+                           Stable
+                        </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-unit">Data Quality Index</p>
+<div class="flex items-end gap-stack-sm">
+<span class="font-display-lg text-display-lg text-primary">99.8%</span>
+<span class="font-body-md text-body-md text-on-surface-variant bg-surface-container px-2 py-1 rounded mb-1 flex items-center">
+<span class="material-symbols-outlined text-[16px] mr-1" data-icon="check_circle">check_circle</span>
+                           Verified
+                        </span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

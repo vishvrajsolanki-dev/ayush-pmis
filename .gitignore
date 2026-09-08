@@ -62,7 +62,9 @@ coverage.xml
 
 # Node (for any future frontend integration in this monorepo)
 node_modules/
+.next/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anchor Portal - Evidence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#091426",
+                        "inverse-primary": "#bcc7de",
+                        "on-tertiary-fixed-variant": "#564427",
+                        "on-secondary-container": "#57657b",
+                        "inverse-surface": "#2d3133",
+                        "primary-fixed-dim": "#bcc7de",
+                        "secondary-container": "#d5e3fd",
+                        "on-error": "#ffffff",
+                        "background": "#f7f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "outline": "#75777d",
+                        "primary-fixed": "#d8e3fb",
+                        "on-tertiary-container": "#a38c6a",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary-fixed": "#271902",
+                        "on-surface-variant": "#45474c",
+                        "surface": "#f7f9fb",
+                        "surface-tint": "#545f73",
+                        "secondary": "#515f74",
+                        "tertiary-fixed": "#fadfb8",
+                        "outline-variant": "#c5c6cd",
+                        "tertiary": "#1e1200",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "on-primary-fixed": "#111c2d",
+                        "primary-container": "#1e293b",
+                        "surface-container": "#eceef0",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "on-background": "#191c1e",
+                        "secondary-fixed": "#d5e3fd",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary-container": "#8590a6",
+                        "tertiary-fixed-dim": "#ddc39d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "surface-variant": "#e0e3e5",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "tertiary-container": "#35260c",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "container-padding": "32px",
+                        "stack-sm": "8px",
+                        "section-gap": "48px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "display-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "label-sm": ["Public Sans"],
+                        "data-tabular": ["Public Sans"],
+                        "headline-sm": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "data-tabular": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-hidden">
+<div class="flex h-screen w-full relative">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-low h-screen w-64 flex flex-col fixed left-0 top-0 border-r border-outline-variant dark:border-outline hidden lg:flex flex-col h-full overflow-y-auto z-40">
+<div class="p-container-padding pb-stack-lg border-b border-surface-container-highest">
+<div class="flex items-center gap-stack-sm mb-stack-md">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small, professional avatar or logo for an institutional portal, rendered in a crisp, clean light mode aesthetic with navy blue and soft gray tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVbfaULgzBaVC3TVjCjygXfvKukBhvaDmQ3r5b6ALHlxGua7uavlSrdK0SjxyenIR_4JRmhfuu2Ft55yJfSdTZINP2zY0XjF6lVvF90ZA66lHwOh3_NJV8ETd5VO7E8X4WQxEXq-8jN580-k2kVPVGCvh2UvGyq91zEhOPXgBhRYahER0ZiH0HWnLh_XRJfYhfP2UhJQgGRcvhuksTGHi8kgBElwTOo0eNbG571nCd68EC-ST-U7JH8Q"/>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">Anchor Portal</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Governance &amp; Allocation</p>
+</div>
+</div>
+</div>
+<div class="flex-1 py-stack-md overflow-y-auto">
+<ul class="space-y-unit">
+<li>
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-primary dark:text-primary-fixed font-bold border-r-2 border-primary dark:border-primary-fixed bg-surface-container-low dark:bg-surface-container hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-label-sm text-label-sm">Evidence</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+<span class="font-label-sm text-label-sm">Opportunities</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm">Preferences</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm">Allocation Status</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="p-container-padding border-t border-surface-container-highest mt-auto">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-stack-sm">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A professional headshot of a user, well-lit, suitable for a formal institutional application profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr_YCKaOaDgI2DQVAs9jUQM5iODMUJMcdAv6bSxX01a1wwbsXdgeg7wd1rw_UdYC7pgyy26-ialg8SJAZhgqOrM_CJAb3oC--tKIngrZmPbEeXVeIz28KzNsuoaDPo1NM4f5QkZ6e8__UlcS6VBPvKHlSG3SNPo_faQKaN94DcDRsMdCfNAR-4iiRlgrBpyVej24jOZ_Y3oJBCqq_fQJGJzJkV0peeC3hYPwv_REZw_RQcaHCQy62qJQ"/>
+<span class="font-label-sm text-label-sm font-medium">J. Doe</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 lg:ml-64 bg-background overflow-y-auto">
+<!-- Mobile Top Bar (Visible only on md screens if nav is suppressed, but here we show a basic header for context) -->
+<header class="lg:hidden bg-surface-container-lowest border-b border-outline-variant px-container-padding py-stack-md flex justify-between items-center sticky top-0 z-30">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">Anchor Portal</h1>
+<button class="text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="p-container-padding max-w-5xl mx-auto py-section-gap">
+<!-- Page Header -->
+<div class="mb-section-gap flex flex-col md:flex-row md:items-end justify-between gap-stack-lg">
+<div>
+<div class="flex items-center gap-stack-sm mb-stack-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="font-label-caps text-label-caps">Skill Verification</span>
+</div>
+<h2 class="font-display-lg text-display-lg text-primary mb-unit">Advanced Data Structures &amp; Algorithms</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Manage artifacts substantiating claims for this core competency. The ledger requires distinct, non-overlapping evidentiary items.</p>
+</div>
+</div>
+<!-- Alert Banner: Cap Reached -->
+<div class="bg-error-container/20 border border-error/30 rounded-lg p-stack-md flex items-start gap-stack-md mb-stack-lg">
+<span class="material-symbols-outlined text-error mt-0.5">error</span>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-unit">Evidence Cap Reached</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A maximum of 5 evidence items is allowed per skill claim. Remove an item to add a new one.</p>
+</div>
+<div class="bg-surface-container px-3 py-1 rounded font-data-tabular text-data-tabular text-on-surface-variant border border-outline-variant">
+                        5 / 5 Items
+                    </div>
+</div>
+<!-- Action Bar (Disabled State) -->
+<div class="flex justify-between items-center bg-surface-container-lowest border border-outline-variant rounded-t-lg p-stack-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Verified Artifacts</h3>
+<button class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-4 py-2 rounded opacity-50 cursor-not-allowed flex items-center gap-2" disabled="">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Add Evidence
+                    </button>
+</div>
+<!-- Artifacts List (Table-like structural UI) -->
+<div class="bg-surface-container-lowest border border-t-0 border-outline-variant rounded-b-lg overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<!-- Header Row -->
+<div class="grid grid-cols-12 gap-gutter px-stack-md py-3 bg-surface-container-low border-b border-surface-container-highest font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">
+<div class="col-span-5">Artifact Description</div>
+<div class="col-span-3">Type</div>
+<div class="col-span-3">Date Submitted</div>
+<div class="col-span-1 text-right">Actions</div>
+</div>
+<!-- List Items -->
+<div class="divide-y divide-surface-container-highest">
+<!-- Item 1 -->
+<div class="grid grid-cols-12 gap-gutter px-stack-md py-stack-md items-center hover:bg-surface-bright transition-colors">
+<div class="col-span-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary-container rounded flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-weight="fill">code</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface font-medium">B-Tree Implementation Project</p>
+<p class="font-data-tabular text-data-tabular text-on-surface-variant truncate">CS-401 Final Assignment Repository</p>
+</div>
+</div>
+</div>
+<div class="col-span-3">
+<span class="inline-flex items-center px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary mr-2"></span> Code Repository
+                                </span>
+</div>
+<div class="col-span-3 font-data-tabular text-data-tabular text-on-surface-variant">
+                                Oct 12, 2023
+                            </div>
+<div class="col-span-1 text-right">
+<button class="text-on-surface-variant hover:text-error transition-colors p-1" title="Remove Artifact">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="grid grid-cols-12 gap-gutter px-stack-md py-stack-md items-center hover:bg-surface-bright transition-colors">
+<div class="col-span-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-tertiary-fixed rounded flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined" data-weight="fill">description</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface font-medium">Graph Traversal Optimization Paper</p>
+<p class="font-data-tabular text-data-tabular text-on-surface-variant truncate">Published in Student Tech Journal</p>
+</div>
+</div>
+</div>
+<div class="col-span-3">
+<span class="inline-flex items-center px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary-container mr-2"></span> Publication
+                                </span>
+</div>
+<div class="col-span-3 font-data-tabular text-data-tabular text-on-surface-variant">
+                                Nov 05, 2023
+                            </div>
+<div class="col-span-1 text-right">
+<button class="text-on-surface-variant hover:text-error transition-colors p-1" title="Remove Artifact">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="grid grid-cols-12 gap-gutter px-stack-md py-stack-md items-center hover:bg-surface-bright transition-colors">
+<div class="col-span-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-high rounded flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-weight="fill">school</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface font-medium">Advanced Algorithms Certification</p>
+<p class="font-data-tabular text-data-tabular text-on-surface-variant truncate">Coursera - Stanford University</p>
+</div>
+</div>
+</div>
+<div class="col-span-3">
+<span class="inline-flex items-center px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-outline mr-2"></span> Certificate
+                                </span>
+</div>
+<div class="col-span-3 font-data-tabular text-data-tabular text-on-surface-variant">
+                                Jan 18, 2024
+                            </div>
+<div class="col-span-1 text-right">
+<button class="text-on-surface-variant hover:text-error transition-colors p-1" title="Remove Artifact">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="grid grid-cols-12 gap-gutter px-stack-md py-stack-md items-center hover:bg-surface-bright transition-colors">
+<div class="col-span-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-fixed rounded flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-weight="fill">group_work</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface font-medium">Hackathon: Routing Protocol</p>
+<p class="font-data-tabular text-data-tabular text-on-surface-variant truncate">1st Place - Metro Hacks 2024</p>
+</div>
+</div>
+</div>
+<div class="col-span-3">
+<span class="inline-flex items-center px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary-container mr-2"></span> Competition
+                                </span>
+</div>
+<div class="col-span-3 font-data-tabular text-data-tabular text-on-surface-variant">
+                                Mar 22, 2024
+                            </div>
+<div class="col-span-1 text-right">
+<button class="text-on-surface-variant hover:text-error transition-colors p-1" title="Remove Artifact">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="grid grid-cols-12 gap-gutter px-stack-md py-stack-md items-center hover:bg-surface-bright transition-colors">
+<div class="col-span-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary-container rounded flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-weight="fill">code</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface font-medium">Dynamic Programming Solver</p>
+<p class="font-data-tabular text-data-tabular text-on-surface-variant truncate">Open Source Contribution (PR #142)</p>
+</div>
+</div>
+</div>
+<div class="col-span-3">
+<span class="inline-flex items-center px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary mr-2"></span> Code Repository
+                                </span>
+</div>
+<div class="col-span-3 font-data-tabular text-data-tabular text-on-surface-variant">
+                                May 04, 2024
+                            </div>
+<div class="col-span-1 text-right">
+<button class="text-on-surface-variant hover:text-error transition-colors p-1" title="Remove Artifact">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

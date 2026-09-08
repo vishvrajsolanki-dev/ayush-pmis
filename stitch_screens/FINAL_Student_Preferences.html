@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anchor Portal - Student Preferences</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+        }
+        .drag-ghost {
+            opacity: 0.4;
+            background-color: #f2f4f6; /* surface-container-low */
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#a38c6a",
+                        "on-surface-variant": "#45474c",
+                        "on-surface": "#191c1e",
+                        "secondary-fixed": "#d5e3fd",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed": "#111c2d",
+                        "primary": "#091426",
+                        "surface-bright": "#f7f9fb",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed-dim": "#ddc39d",
+                        "on-primary-container": "#8590a6",
+                        "on-tertiary-fixed-variant": "#564427",
+                        "surface-container": "#eceef0",
+                        "on-background": "#191c1e",
+                        "tertiary": "#1e1200",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "tertiary-fixed": "#fadfb8",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#75777d",
+                        "background": "#f7f9fb",
+                        "tertiary-container": "#35260c",
+                        "inverse-primary": "#bcc7de",
+                        "secondary": "#515f74",
+                        "surface-container-high": "#e6e8ea",
+                        "primary-container": "#1e293b",
+                        "inverse-surface": "#2d3133",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#bcc7de",
+                        "secondary-container": "#d5e3fd",
+                        "outline-variant": "#c5c6cd",
+                        "surface": "#f7f9fb",
+                        "on-tertiary-fixed": "#271902",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-tint": "#545f73",
+                        "on-secondary-container": "#57657b",
+                        "surface-variant": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#d8e3fb",
+                        "on-secondary-fixed": "#0d1c2f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-padding": "32px",
+                        "section-gap": "48px",
+                        "stack-md": "16px",
+                        "unit": "4px",
+                        "stack-lg": "24px",
+                        "gutter": "24px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "data-tabular": ["Public Sans"],
+                        "headline-sm": ["Public Sans"],
+                        "display-lg": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "label-caps": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "data-tabular": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col lg:flex-row">
+<!-- JSON Component: SideNavBar -->
+<nav class="hidden lg:flex flex-col h-screen w-64 fixed left-0 top-0 border-r border-outline-variant bg-surface-container-lowest overflow-y-auto z-40">
+<div class="p-container-padding">
+<div class="flex items-center gap-stack-sm mb-stack-lg">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">domain</span>
+</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">Anchor Portal</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Governance &amp; Allocation</p>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-unit">
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-label-sm text-label-sm">Evidence</span>
+</a>
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+<span class="font-label-sm text-label-sm">Opportunities</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-primary font-bold border-r-2 border-primary bg-surface-container-low cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm">Preferences</span>
+</a>
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm">Allocation Status</span>
+</a>
+</div>
+</nav>
+<!-- JSON Component: TopNavBar (Mobile Fallback) -->
+<header class="lg:hidden flex justify-between items-center px-container-padding py-stack-md w-full bg-surface-container-lowest/80 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">Anchor</h1>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 transition-transform">
+            Sign Out
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 lg:ml-64 p-container-padding md:p-section-gap flex flex-col gap-section-gap max-w-7xl">
+<!-- Page Header -->
+<header class="flex flex-col gap-stack-sm border-b border-outline-variant pb-stack-md">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface">Submit Preferences</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-unit">Rank your requested opportunities for the upcoming allocation cycle.</p>
+</div>
+<button class="bg-primary text-on-primary px-stack-lg py-stack-sm rounded hover:bg-primary-container transition-colors font-label-sm text-label-sm h-fit">
+                    Submit Final List
+                </button>
+</div>
+</header>
+<!-- Information Banner (Incomplete Validation) -->
+<div class="bg-surface-container border border-outline-variant rounded p-stack-md flex items-start gap-stack-md shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined text-on-surface-variant mt-1">info</span>
+<div class="flex flex-col gap-unit">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Partial Submissions Allowed</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">There is no minimum requirement. You may submit an incomplete or entirely empty ranked list. The allocation engine will process whatever preferences are provided.</p>
+</div>
+</div>
+<!-- Bento Grid Layout for Drag & Drop -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter">
+<!-- Left Column: Available Opportunities -->
+<section class="xl:col-span-5 flex flex-col gap-stack-md">
+<div class="flex items-center justify-between">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase bg-surface-container-low px-stack-sm py-unit rounded inline-block">Available Pool</h3>
+<span class="font-data-tabular text-data-tabular text-on-surface-variant bg-surface-container px-stack-sm py-unit rounded">8 Total</span>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<!-- Draggable Item 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-stack-md flex items-center gap-stack-md shadow-[0_1px_2px_rgba(0,0,0,0.05)] cursor-grab hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-outline cursor-grab">drag_indicator</span>
+<div class="flex flex-col gap-unit flex-1">
+<span class="font-label-sm text-label-sm text-on-surface">Data Science Internship</span>
+<span class="font-data-tabular text-data-tabular text-on-surface-variant">TechFlow Systems</span>
+</div>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors" title="Add to Rank">add_circle</span>
+</div>
+<!-- Draggable Item 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-stack-md flex items-center gap-stack-md shadow-[0_1px_2px_rgba(0,0,0,0.05)] cursor-grab hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-outline cursor-grab">drag_indicator</span>
+<div class="flex flex-col gap-unit flex-1">
+<span class="font-label-sm text-label-sm text-on-surface">Quantitative Analysis</span>
+<span class="font-data-tabular text-data-tabular text-on-surface-variant">Apex Capital</span>
+</div>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors" title="Add to Rank">add_circle</span>
+</div>
+<!-- Draggable Item 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-stack-md flex items-center gap-stack-md shadow-[0_1px_2px_rgba(0,0,0,0.05)] cursor-grab hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-outline cursor-grab">drag_indicator</span>
+<div class="flex flex-col gap-unit flex-1">
+<span class="font-label-sm text-label-sm text-on-surface">Machine Learning Research</span>
+<span class="font-data-tabular text-data-tabular text-on-surface-variant">Stellar Labs</span>
+</div>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors" title="Add to Rank">add_circle</span>
+</div>
+</div>
+</section>
+<!-- Right Column: Ranked Preferences (Drop Zone) -->
+<section class="xl:col-span-7 flex flex-col gap-stack-md">
+<div class="flex items-center justify-between">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase bg-surface-container-low px-stack-sm py-unit rounded inline-block">Your Ranked List</h3>
+<span class="font-data-tabular text-data-tabular text-on-surface-variant bg-surface-container px-stack-sm py-unit rounded">2 Selected</span>
+</div>
+<!-- Drop Zone Container -->
+<div class="bg-surface border-2 border-dashed border-outline-variant rounded p-stack-md flex flex-col gap-stack-sm min-h-[400px]">
+<!-- Ranked Item 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-stack-md flex items-center gap-stack-md shadow-[0_1px_2px_rgba(0,0,0,0.05)] relative group cursor-grab">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-l"></div>
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center font-label-sm text-label-sm text-on-surface">1</div>
+<div class="flex flex-col gap-unit flex-1">
+<span class="font-label-sm text-label-sm text-on-surface">Systems Architecture Lead</span>
+<span class="font-data-tabular text-data-tabular text-on-surface-variant">Nexus Corp</span>
+</div>
+<div class="flex items-center gap-stack-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-outline hover:text-on-surface cursor-pointer">arrow_upward</span>
+<span class="material-symbols-outlined text-outline hover:text-on-surface cursor-pointer">arrow_downward</span>
+</div>
+<span class="material-symbols-outlined text-error cursor-pointer ml-stack-sm hover:opacity-80">delete</span>
+</div>
+<!-- Ranked Item 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-stack-md flex items-center gap-stack-md shadow-[0_1px_2px_rgba(0,0,0,0.05)] relative group cursor-grab">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center font-label-sm text-label-sm text-on-surface">2</div>
+<div class="flex flex-col gap-unit flex-1">
+<span class="font-label-sm text-label-sm text-on-surface">Frontend Engineering</span>
+<span class="font-data-tabular text-data-tabular text-on-surface-variant">Creative Dynamics</span>
+</div>
+<div class="flex items-center gap-stack-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-outline hover:text-on-surface cursor-pointer">arrow_upward</span>
+<span class="material-symbols-outlined text-outline hover:text-on-surface cursor-pointer">arrow_downward</span>
+</div>
+<span class="material-symbols-outlined text-error cursor-pointer ml-stack-sm hover:opacity-80">delete</span>
+</div>
+<!-- Empty Slot Placeholder -->
+<div class="border border-dashed border-outline-variant rounded p-stack-md flex items-center justify-center gap-stack-sm h-[72px] bg-surface-container-lowest opacity-60">
+<span class="material-symbols-outlined text-outline">add</span>
+<span class="font-label-sm text-label-sm text-outline">Drag opportunities here to rank</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

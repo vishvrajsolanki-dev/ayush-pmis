@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Faculty Verification Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#bcc7de",
+                        "tertiary-fixed": "#fadfb8",
+                        "on-surface-variant": "#45474c",
+                        "secondary-container": "#d5e3fd",
+                        "on-tertiary-fixed": "#271902",
+                        "on-surface": "#191c1e",
+                        "secondary-fixed": "#d5e3fd",
+                        "primary-container": "#1e293b",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "inverse-surface": "#2d3133",
+                        "error-container": "#ffdad6",
+                        "outline": "#75777d",
+                        "surface-variant": "#e0e3e5",
+                        "surface-tint": "#545f73",
+                        "on-secondary-container": "#57657b",
+                        "on-primary-container": "#8590a6",
+                        "on-tertiary-fixed-variant": "#564427",
+                        "on-primary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-container": "#35260c",
+                        "surface-bright": "#f7f9fb",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "tertiary": "#1e1200",
+                        "tertiary-fixed-dim": "#ddc39d",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "outline-variant": "#c5c6cd",
+                        "primary-fixed-dim": "#bcc7de",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "on-tertiary-container": "#a38c6a",
+                        "primary": "#091426",
+                        "secondary": "#515f74",
+                        "primary-fixed": "#d8e3fb",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "surface-container-low": "#f2f4f6",
+                        "background": "#f7f9fb",
+                        "on-primary-fixed": "#111c2d",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eceef0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "section-gap": "48px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "container-padding": "32px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Public Sans"],
+                        "data-tabular": ["Public Sans"],
+                        "label-caps": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "display-lg": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "headline-sm": ["Public Sans"],
+                        "body-md": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "data-tabular": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F8FAFC; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; font-size: 20px; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="font-body-md text-on-surface bg-background antialiased flex h-screen overflow-hidden">
+<!-- TopNavBar (Hidden structure but needed for layout if fixed side nav uses top-16) -->
+<header class="bg-surface dark:bg-surface-container flex justify-between items-center w-full px-container-padding h-16 max-w-full border-b border-outline-variant dark:border-outline fixed top-0 left-0 right-0 z-50">
+<div class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary">Anchor Platform</div>
+<button class="text-primary dark:text-inverse-primary font-label-sm text-label-sm hover:bg-surface-container-low px-4 py-2 rounded">Sign Out</button>
+</header>
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant dark:border-outline flex flex-col h-full w-64 fixed left-0 top-16 z-40 px-4 py-6">
+<div class="mb-stack-lg">
+<h2 class="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary mb-1">Faculty Workspace</h2>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Institutional Verification</p>
+</div>
+<ul class="flex flex-col gap-unit">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-primary dark:text-inverse-primary font-bold bg-surface-container-high dark:bg-secondary-container translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined icon-fill">verified_user</span>
+<span class="text-label-sm font-label-sm">Verification Queue</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-label-sm font-label-sm">Student Roster</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Main Canvas -->
+<main class="ml-64 mt-16 flex-1 overflow-y-auto p-container-padding">
+<div class="max-w-4xl mx-auto">
+<!-- Breadcrumbs / Back -->
+<div class="mb-stack-md flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">arrow_back</span>
+<span class="text-label-sm font-label-sm cursor-pointer hover:text-primary transition-colors">Back to Queue</span>
+</div>
+<!-- Page Header -->
+<div class="mb-section-gap flex flex-col md:flex-row md:items-start justify-between gap-stack-lg">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<h1 class="text-display-lg font-display-lg text-primary">Python Data Analysis</h1>
+<div class="flex items-center gap-1 bg-secondary-container text-on-secondary-container px-2 py-1 rounded text-label-sm font-label-sm">
+<span class="material-symbols-outlined icon-fill" style="font-size: 16px;">verified</span>
+                            Verified by institution account
+                        </div>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Submitted by Jane Doe (ID: 987654321)</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface-variant px-4 py-2 rounded-DEFAULT font-label-sm text-label-sm hover:bg-surface-container-low transition-colors">Reject</button>
+<button class="bg-primary-container text-on-primary px-4 py-2 rounded-DEFAULT font-label-sm text-label-sm hover:bg-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined icon-fill" style="font-size: 16px;">check_circle</span>
+                        Verify Claim
+                    </button>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Col: Details -->
+<div class="md:col-span-8 flex flex-col gap-stack-lg">
+<!-- Claim Description -->
+<section class="bg-surface-container-lowest border border-surface-variant rounded-lg p-stack-lg shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<h3 class="text-headline-sm font-headline-sm text-primary mb-stack-md">Claim Description</h3>
+<p class="text-body-md font-body-md text-on-surface leading-relaxed">
+                            Applied advanced Python libraries (Pandas, NumPy, Scikit-learn) to analyze a dataset of over 50,000 records. Cleaned data, performed exploratory data analysis (EDA), and developed a predictive model to forecast trends with 85% accuracy. The project culminated in a detailed Jupyter Notebook outlining the methodology and findings.
+                        </p>
+</section>
+<!-- Attached Artifacts -->
+<section class="bg-surface-container-lowest border border-surface-variant rounded-lg p-stack-lg shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<h3 class="text-headline-sm font-headline-sm text-primary mb-stack-md">Attached Artifacts</h3>
+<div class="flex flex-col gap-stack-sm">
+<!-- Artifact Item -->
+<div class="flex items-center justify-between p-3 border border-surface-variant rounded bg-surface hover:border-outline transition-colors group cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="bg-surface-container p-2 rounded text-on-surface-variant">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div>
+<p class="text-data-tabular font-data-tabular text-on-surface">Data_Analysis_Report_Final.pdf</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">2.4 MB • Uploaded Oct 24, 2023</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</div>
+<!-- Artifact Item -->
+<div class="flex items-center justify-between p-3 border border-surface-variant rounded bg-surface hover:border-outline transition-colors group cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="bg-surface-container p-2 rounded text-on-surface-variant">
+<span class="material-symbols-outlined">link</span>
+</div>
+<div>
+<p class="text-data-tabular font-data-tabular text-on-surface">GitHub Repository: Predictive Model</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">External Link</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Col: Metadata -->
+<div class="md:col-span-4 flex flex-col gap-stack-lg">
+<section class="bg-surface-container-lowest border border-surface-variant rounded-lg p-stack-lg shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<h3 class="text-label-caps font-label-caps text-on-surface-variant mb-stack-md uppercase tracking-wider">Claim Metadata</h3>
+<ul class="flex flex-col gap-4">
+<li>
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-1">Category</p>
+<div class="bg-[#F1F5F9] px-3 py-2 rounded text-data-tabular font-data-tabular text-on-surface">Technical Skills</div>
+</li>
+<li>
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-1">Proficiency Level</p>
+<div class="bg-[#F1F5F9] px-3 py-2 rounded text-data-tabular font-data-tabular text-on-surface">Advanced</div>
+</li>
+<li>
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-1">Context</p>
+<div class="bg-[#F1F5F9] px-3 py-2 rounded text-data-tabular font-data-tabular text-on-surface">Coursework: CS405</div>
+</li>
+<li>
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-1">Date Claimed</p>
+<div class="bg-[#F1F5F9] px-3 py-2 rounded text-data-tabular font-data-tabular text-on-surface">Oct 25, 2023</div>
+</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</main>
+</body></html>

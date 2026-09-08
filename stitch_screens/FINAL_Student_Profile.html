@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Profile - Anchor Portal</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#a38c6a",
+                    "on-surface-variant": "#45474c",
+                    "on-surface": "#191c1e",
+                    "secondary-fixed": "#d5e3fd",
+                    "surface-container-low": "#f2f4f6",
+                    "on-primary-fixed": "#111c2d",
+                    "primary": "#091426",
+                    "surface-bright": "#f7f9fb",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#3c475a",
+                    "surface-container-highest": "#e0e3e5",
+                    "tertiary-fixed-dim": "#ddc39d",
+                    "on-primary-container": "#8590a6",
+                    "on-tertiary-fixed-variant": "#564427",
+                    "surface-container": "#eceef0",
+                    "on-background": "#191c1e",
+                    "tertiary": "#1e1200",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#3a485c",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#b9c7e0",
+                    "tertiary-fixed": "#fadfb8",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#d8dadc",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#75777d",
+                    "background": "#f7f9fb",
+                    "tertiary-container": "#35260c",
+                    "inverse-primary": "#bcc7de",
+                    "secondary": "#515f74",
+                    "surface-container-high": "#e6e8ea",
+                    "primary-container": "#1e293b",
+                    "inverse-surface": "#2d3133",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#bcc7de",
+                    "secondary-container": "#d5e3fd",
+                    "outline-variant": "#c5c6cd",
+                    "surface": "#f7f9fb",
+                    "on-tertiary-fixed": "#271902",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-tint": "#545f73",
+                    "on-secondary-container": "#57657b",
+                    "surface-variant": "#e0e3e5",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#d8e3fb",
+                    "on-secondary-fixed": "#0d1c2f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-padding": "32px",
+                    "section-gap": "48px",
+                    "stack-md": "16px",
+                    "unit": "4px",
+                    "stack-lg": "24px",
+                    "gutter": "24px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "label-sm": [
+                            "Public Sans"
+                    ],
+                    "headline-md": [
+                            "Public Sans"
+                    ],
+                    "data-tabular": [
+                            "Public Sans"
+                    ],
+                    "headline-sm": [
+                            "Public Sans"
+                    ],
+                    "display-lg": [
+                            "Public Sans"
+                    ],
+                    "body-lg": [
+                            "Public Sans"
+                    ],
+                    "body-md": [
+                            "Public Sans"
+                    ],
+                    "label-caps": [
+                            "Public Sans"
+                    ]
+            },
+            "fontSize": {
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "data-tabular": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-sm": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background h-full font-body-md text-body-md antialiased overflow-hidden">
+<!-- Top Navigation (Mobile) -->
+<nav class="md:hidden flex justify-between items-center px-container-padding py-stack-md w-full bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant docked full-width top-0 sticky z-50">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">Anchor</div>
+<button class="font-body-md text-body-md text-primary font-medium hover:text-primary transition-colors duration-200 active:scale-95 transition-transform">Sign Out</button>
+</nav>
+<div class="flex h-full w-full">
+<!-- Side Navigation (Desktop) -->
+<aside class="hidden lg:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant overflow-y-auto z-40">
+<div class="p-container-padding pb-stack-lg border-b border-outline-variant">
+<div class="flex items-center gap-stack-md mb-stack-md">
+<img alt="User profile photo" class="w-10 h-10 rounded-full border border-outline-variant object-cover bg-surface-container" data-alt="A minimal, professional avatar placeholder featuring a clean geometric portrait outline in soft gray and deep charcoal tones on a stark white background, matching a serious institutional software aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFrYdybFuD4oaX7voJK-rvBW5g3VwXwxIoy--5Yu9h4QXPFeb5l1fdZQ8Bn-2tDhErgUPCft5IdzjcseykBK8vOGhTpByD5tdDPsA-B6qaV0ikQxjf2TEyzmpDOth6hi-R-XnmoDZ1A3vmdfPo2qeO4yUA_7mJQ0Sqkf5HAo_xQ63kOR04Lit0uV06uYYn2E9aYwLxzvjxjVzwhqkz1W2Pc0MaeKpQ9ANExSqbIF-HtGs8nGYciHdIFg"/>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">Anchor Portal</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Governance &amp; Allocation</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 py-stack-md flex flex-col gap-unit font-label-sm text-label-sm">
+<!-- Active Tab: Profile -->
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-primary font-bold border-r-2 border-primary bg-surface-container-low cursor-pointer active:opacity-80 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;">account_circle</span>
+                    Profile
+                </a>
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;">verified_user</span>
+                    Evidence
+                </a>
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;">rocket_launch</span>
+                    Opportunities
+                </a>
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;">settings</span>
+                    Preferences
+                </a>
+<a class="flex items-center gap-stack-md px-container-padding py-stack-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;">account_balance_wallet</span>
+                    Allocation Status
+                </a>
+</nav>
+<div class="p-container-padding border-t border-outline-variant">
+<button class="w-full flex items-center justify-center gap-stack-sm py-stack-sm text-on-surface-variant hover:text-primary font-label-sm text-label-sm transition-colors duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;">logout</span>
+                     Sign Out
+                 </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 h-screen overflow-y-auto bg-surface-container-lowest">
+<!-- Page Header -->
+<header class="px-container-padding py-container-padding border-b border-outline-variant bg-surface-container-lowest sticky top-0 z-30">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-stack-lg">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-unit uppercase tracking-wider">Candidate Profile</p>
+<h2 class="font-display-lg text-display-lg text-primary m-0">Evelyn Harper</h2>
+<div class="flex items-center gap-stack-md mt-stack-sm">
+<span class="font-data-tabular text-data-tabular text-secondary px-stack-sm py-unit bg-surface-container rounded-sm">ID: 948-221-4450</span>
+<span class="flex items-center gap-unit text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;">location_on</span>
+                                Cambridge Campus
+                            </span>
+</div>
+</div>
+<!-- Visibility Toggle -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-stack-sm flex items-center gap-stack-sm self-start md:self-auto shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-unit">Profile Visibility:</span>
+<div class="flex bg-surface-container border border-outline-variant rounded p-unit">
+<button class="px-stack-md py-stack-sm rounded font-label-sm text-label-sm bg-primary-container text-on-primary transition-colors">
+                                Discoverable
+                            </button>
+<button class="px-stack-md py-stack-sm rounded font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors">
+                                Private
+                            </button>
+<button class="px-stack-md py-stack-sm rounded font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors">
+                                App-Shared
+                            </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="px-container-padding py-section-gap max-w-6xl mx-auto space-y-section-gap pb-32">
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Academic Context (Primary Focus) -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-lg p-container-padding shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<div class="flex items-center gap-stack-sm mb-stack-lg pb-stack-sm border-b border-surface-container">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;">school</span>
+<h3 class="font-headline-sm text-headline-sm text-primary m-0">Academic Context</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-lg">
+<div class="space-y-stack-sm">
+<p class="font-label-caps text-label-caps text-on-surface-variant">Primary Program of Study</p>
+<p class="font-body-lg text-body-lg text-primary">MSc Cognitive Computational Systems</p>
+</div>
+<div class="space-y-stack-sm">
+<p class="font-label-caps text-label-caps text-on-surface-variant">Expected Completion</p>
+<p class="font-body-lg text-body-lg text-primary">Spring 2026</p>
+</div>
+<div class="space-y-stack-sm">
+<p class="font-label-caps text-label-caps text-on-surface-variant">Department</p>
+<p class="font-body-lg text-body-lg text-primary">School of Applied Sciences</p>
+</div>
+<div class="space-y-stack-sm">
+<p class="font-label-caps text-label-caps text-on-surface-variant">Current Status</p>
+<div class="inline-flex items-center gap-unit px-stack-sm py-unit bg-surface-container rounded-sm">
+<div class="w-2 h-2 rounded-full bg-[#1E293B]"></div>
+<span class="font-label-sm text-label-sm text-primary">Active Registration</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact & Identity -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-lg p-container-padding shadow-[0_1px_2px_rgba(0,0,0,0.05)] flex flex-col">
+<div class="flex items-center gap-stack-sm mb-stack-lg pb-stack-sm border-b border-surface-container">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;">badge</span>
+<h3 class="font-headline-sm text-headline-sm text-primary m-0">Identity Records</h3>
+</div>
+<ul class="space-y-stack-lg flex-1">
+<li>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-unit">Institutional Email</p>
+<div class="flex items-center gap-stack-sm">
+<p class="font-body-md text-body-md text-primary truncate">e.harper.948@anchor.edu</p>
+<button class="text-secondary hover:text-primary" title="Copy to clipboard">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</li>
+<li>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-unit">System Registration Date</p>
+<p class="font-body-md text-body-md text-primary">August 14, 2024</p>
+</li>
+<li>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-unit">Primary Faculty Advisor</p>
+<p class="font-body-md text-body-md text-primary">Dr. S. Chen</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

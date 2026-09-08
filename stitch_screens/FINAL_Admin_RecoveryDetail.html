@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anchor Admin - Recovery Event Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#eceef0",
+                      "primary-container": "#1e293b",
+                      "inverse-primary": "#bcc7de",
+                      "secondary-fixed-dim": "#b9c7e0",
+                      "surface-dim": "#d8dadc",
+                      "on-primary": "#ffffff",
+                      "primary-fixed": "#d8e3fb",
+                      "error-container": "#ffdad6",
+                      "surface-bright": "#f7f9fb",
+                      "on-secondary-container": "#57657b",
+                      "primary": "#091426",
+                      "secondary": "#515f74",
+                      "surface-container-low": "#f2f4f6",
+                      "on-background": "#191c1e",
+                      "primary-fixed-dim": "#bcc7de",
+                      "outline-variant": "#c5c6cd",
+                      "surface": "#f7f9fb",
+                      "on-primary-container": "#8590a6",
+                      "on-tertiary-fixed": "#271902",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-container": "#35260c",
+                      "surface-tint": "#545f73",
+                      "on-primary-fixed-variant": "#3c475a",
+                      "on-secondary": "#ffffff",
+                      "outline": "#75777d",
+                      "tertiary-fixed-dim": "#ddc39d",
+                      "on-primary-fixed": "#111c2d",
+                      "on-surface-variant": "#45474c",
+                      "background": "#f7f9fb",
+                      "on-secondary-fixed": "#0d1c2f",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#564427",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#eff1f3",
+                      "tertiary": "#1e1200",
+                      "secondary-fixed": "#d5e3fd",
+                      "surface-variant": "#e0e3e5",
+                      "tertiary-fixed": "#fadfb8",
+                      "surface-container-high": "#e6e8ea",
+                      "on-surface": "#191c1e",
+                      "on-secondary-fixed-variant": "#3a485c",
+                      "secondary-container": "#d5e3fd",
+                      "inverse-surface": "#2d3133",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-container": "#a38c6a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "gutter": "24px",
+                      "stack-lg": "24px",
+                      "section-gap": "48px",
+                      "container-padding": "32px"
+              },
+              "fontFamily": {
+                      "data-tabular": ["Public Sans"],
+                      "label-caps": ["Public Sans"],
+                      "body-md": ["Public Sans"],
+                      "headline-md": ["Public Sans"],
+                      "body-lg": ["Public Sans"],
+                      "headline-sm": ["Public Sans"],
+                      "display-lg": ["Public Sans"],
+                      "label-sm": ["Public Sans"]
+              },
+              "fontSize": {
+                      "data-tabular": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #F8FAFC; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20; font-size: 20px; }
+        .material-symbols-outlined[data-weight="fill"] { font-variation-settings: 'FILL' 1; }
+        
+        /* Institutional Minimalist Theme Overrides */
+        .card-flat { background-color: #ffffff; border: 1px solid #E2E8F0; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+        .system-well { background-color: #F1F5F9; }
+        .table-header { background-color: #F8FAFC; }
+        .divider { border-color: #F1F5F9; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen p-stack-md gap-stack-md docked left-0 w-64 bg-surface-container-lowest dark:bg-primary-container border-r border-outline-variant dark:border-outline">
+<div class="flex items-center gap-stack-sm mb-stack-lg px-stack-sm">
+<span class="material-symbols-outlined" data-weight="fill">admin_panel_settings</span>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-on-primary">Anchor Admin</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Global Administration</p>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-body-md text-body-md py-2 px-4 rounded mb-section-gap hover:opacity-90 transition-opacity flex justify-center items-center gap-2">
+<span class="material-symbols-outlined">add</span>
+            New Allocation
+        </button>
+<nav class="flex-1 flex flex-col gap-stack-sm">
+<a class="flex items-center gap-stack-sm p-2 text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low dark:hover:bg-primary-fixed-variant rounded-lg font-label-sm text-label-sm transition-all" href="#">
+<span class="material-symbols-outlined">domain</span>
+                Institutions/Companies
+            </a>
+<a class="flex items-center gap-stack-sm p-2 text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low dark:hover:bg-primary-fixed-variant rounded-lg font-label-sm text-label-sm transition-all" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+                Allocation Runs
+            </a>
+<a class="flex items-center gap-stack-sm p-2 bg-surface-container-high dark:bg-secondary-container text-primary dark:text-on-secondary-container font-semibold rounded-lg font-label-sm text-label-sm transition-all scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">rebase_edit</span>
+                Recovery Queue
+            </a>
+<a class="flex items-center gap-stack-sm p-2 text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low dark:hover:bg-primary-fixed-variant rounded-lg font-label-sm text-label-sm transition-all" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+                Audit Log
+            </a>
+</nav>
+<div class="mt-auto flex flex-col gap-stack-sm">
+<a class="flex items-center gap-stack-sm p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg font-label-sm text-label-sm transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+                Support
+            </a>
+<a class="flex items-center gap-stack-sm p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg font-label-sm text-label-sm transition-all" href="#">
+<span class="material-symbols-outlined">description</span>
+                Documentation
+            </a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden">
+<!-- TopNavBar (Mobile Only / Responsive Fallback if needed) -->
+<header class="md:hidden flex justify-between items-center w-full px-container-padding h-16 bg-surface-bright border-b border-outline-variant flat no shadows">
+<div class="font-headline-md text-headline-md font-bold text-primary">Anchor Admin</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-primary cursor-pointer">settings</span>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-container-padding">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-section-gap">
+<div>
+<div class="flex items-center gap-2 mb-2 text-on-surface-variant font-label-sm text-label-sm">
+<a class="hover:underline" href="#">Recovery Queue</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span>Event EVT-8924-R</span>
+</div>
+<h2 class="font-display-lg text-display-lg text-primary">Recovery Event Details</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Detailed analysis of allocation exception and resolution pathway.</p>
+</div>
+<div>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps py-2 px-4 rounded hover:opacity-90 transition-opacity shadow-sm">
+                        Escalate to Full Market Rerun
+                    </button>
+</div>
+</div>
+<!-- Disclaimer Banner -->
+<div class="bg-surface-container-low border-l-4 border-primary p-4 mb-stack-lg rounded flex gap-4 items-start card-flat">
+<span class="material-symbols-outlined text-primary mt-1">info</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Locally Stable Heuristic Applied</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        This recovery event is utilizing a localized stabilization algorithm to prevent cascading reassignments. Changes are isolated to the affected subset to preserve overarching market stability.
+                    </p>
+</div>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-gutter mb-section-gap">
+<!-- Lineage Card -->
+<div class="card-flat rounded-lg p-stack-lg col-span-1 xl:col-span-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-stack-md flex items-center gap-2 border-b divider pb-2">
+<span class="material-symbols-outlined">account_tree</span> Lineage Trace
+                    </h3>
+<div class="relative pl-6 border-l-2 border-surface-variant mt-stack-md">
+<div class="mb-stack-md relative">
+<div class="absolute -left-[31px] top-1 bg-surface border-2 border-primary w-4 h-4 rounded-full"></div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Parent Run ID</div>
+<div class="font-data-tabular text-data-tabular text-primary font-bold">RUN-2024-Q1-A</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Completed: 2024-03-15 08:00 UTC</div>
+</div>
+<div class="mb-stack-md relative">
+<div class="absolute -left-[31px] top-1 bg-error border-2 border-error w-4 h-4 rounded-full"></div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Exception Trigger</div>
+<div class="font-data-tabular text-data-tabular text-error font-bold">Capacity Violation (Inst-402)</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Detected: 2024-03-15 08:45 UTC</div>
+</div>
+<div class="relative">
+<div class="absolute -left-[31px] top-1 bg-primary-fixed border-2 border-primary w-4 h-4 rounded-full"></div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Current Event</div>
+<div class="font-data-tabular text-data-tabular text-primary font-bold system-well px-2 py-1 inline-block mt-1">EVT-8924-R</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Active Status: Resolving</div>
+</div>
+</div>
+</div>
+<!-- Process Status Card -->
+<div class="card-flat rounded-lg p-stack-lg col-span-1 xl:col-span-2">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-stack-md flex items-center gap-2 border-b divider pb-2">
+<span class="material-symbols-outlined">analytics</span> Process Metrics
+                    </h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-stack-md">
+<div class="p-4 system-well rounded">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Affected Candidates</div>
+<div class="font-display-lg text-display-lg text-primary">24</div>
+</div>
+<div class="p-4 system-well rounded">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Involved Institutions</div>
+<div class="font-display-lg text-display-lg text-primary">3</div>
+</div>
+<div class="p-4 system-well rounded">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Resolution Confidence</div>
+<div class="font-display-lg text-display-lg text-primary">94%</div>
+</div>
+<div class="p-4 system-well rounded border-l-4 border-secondary">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Algorithm</div>
+<div class="font-headline-sm text-headline-sm text-primary mt-2">Deferred Acceptance</div>
+</div>
+</div>
+<div class="mt-stack-lg">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Resolution Progress</span>
+<span class="font-label-caps text-label-caps text-primary">75%</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Affected Set Table -->
+<div class="card-flat rounded-lg overflow-hidden">
+<div class="p-stack-lg border-b divider flex justify-between items-center bg-surface-bright">
+<h3 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">group</span> Affected Set
+                    </h3>
+<div class="flex gap-2">
+<button class="bg-surface text-on-surface-variant border border-outline-variant font-label-caps text-label-caps py-1 px-3 rounded hover:bg-surface-container-low transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filter
+                        </button>
+<button class="bg-surface text-on-surface-variant border border-outline-variant font-label-caps text-label-caps py-1 px-3 rounded hover:bg-surface-container-low transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">download</span> Export
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="table-header border-b divider font-label-caps text-label-caps text-on-surface-variant">
+<th class="p-4 font-normal">Candidate ID</th>
+<th class="p-4 font-normal">Original Allocation</th>
+<th class="p-4 font-normal">Priority Score</th>
+<th class="p-4 font-normal">Recovery Status</th>
+<th class="p-4 font-normal text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-data-tabular text-data-tabular text-primary">
+<tr class="border-b divider hover:bg-surface-bright transition-colors">
+<td class="p-4 font-medium">CND-9021-A</td>
+<td class="p-4 text-on-surface-variant">General Hospital (Surg)</td>
+<td class="p-4"><span class="system-well px-2 py-1 rounded">98.4</span></td>
+<td class="p-4">
+<div class="inline-flex items-center gap-1 bg-surface-variant text-on-surface px-2 py-1 rounded-full text-xs font-semibold">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+                                        Re-matching
+                                    </div>
+</td>
+<td class="p-4 text-right">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">more_vert</span>
+</td>
+</tr>
+<tr class="border-b divider hover:bg-surface-bright transition-colors">
+<td class="p-4 font-medium">CND-9022-B</td>
+<td class="p-4 text-on-surface-variant">Mercy Clinic (Int Med)</td>
+<td class="p-4"><span class="system-well px-2 py-1 rounded">92.1</span></td>
+<td class="p-4">
+<div class="inline-flex items-center gap-1 bg-surface-variant text-on-surface px-2 py-1 rounded-full text-xs font-semibold">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+                                        Maintained
+                                    </div>
+</td>
+<td class="p-4 text-right">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">more_vert</span>
+</td>
+</tr>
+<tr class="border-b divider hover:bg-surface-bright transition-colors">
+<td class="p-4 font-medium">CND-9023-C</td>
+<td class="p-4 text-on-surface-variant">St. Jude (Peds)</td>
+<td class="p-4"><span class="system-well px-2 py-1 rounded">88.7</span></td>
+<td class="p-4">
+<div class="inline-flex items-center gap-1 bg-surface-variant text-on-surface px-2 py-1 rounded-full text-xs font-semibold">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+                                        Re-matching
+                                    </div>
+</td>
+<td class="p-4 text-right">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">more_vert</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="p-4 font-medium">CND-9024-D</td>
+<td class="p-4 text-on-surface-variant">General Hospital (Surg)</td>
+<td class="p-4"><span class="system-well px-2 py-1 rounded">85.2</span></td>
+<td class="p-4">
+<div class="inline-flex items-center gap-1 bg-error-container text-on-error-container px-2 py-1 rounded-full text-xs font-semibold border border-error">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+                                        Unmatched
+                                    </div>
+</td>
+<td class="p-4 text-right">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">more_vert</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</body></html>

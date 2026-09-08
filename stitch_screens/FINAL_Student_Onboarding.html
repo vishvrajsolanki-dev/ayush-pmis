@@ -1,0 +1,318 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Anchor Portal - Student Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#a38c6a",
+                      "on-surface-variant": "#45474c",
+                      "on-surface": "#191c1e",
+                      "secondary-fixed": "#d5e3fd",
+                      "surface-container-low": "#f2f4f6",
+                      "on-primary-fixed": "#111c2d",
+                      "primary": "#091426",
+                      "surface-bright": "#f7f9fb",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#3c475a",
+                      "surface-container-highest": "#e0e3e5",
+                      "tertiary-fixed-dim": "#ddc39d",
+                      "on-primary-container": "#8590a6",
+                      "on-tertiary-fixed-variant": "#564427",
+                      "surface-container": "#eceef0",
+                      "on-background": "#191c1e",
+                      "tertiary": "#1e1200",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#3a485c",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed-dim": "#b9c7e0",
+                      "tertiary-fixed": "#fadfb8",
+                      "on-secondary": "#ffffff",
+                      "surface-dim": "#d8dadc",
+                      "on-primary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#75777d",
+                      "background": "#f7f9fb",
+                      "tertiary-container": "#35260c",
+                      "inverse-primary": "#bcc7de",
+                      "secondary": "#515f74",
+                      "surface-container-high": "#e6e8ea",
+                      "primary-container": "#1e293b",
+                      "inverse-surface": "#2d3133",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#bcc7de",
+                      "secondary-container": "#d5e3fd",
+                      "outline-variant": "#c5c6cd",
+                      "surface": "#f7f9fb",
+                      "on-tertiary-fixed": "#271902",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-tint": "#545f73",
+                      "on-secondary-container": "#57657b",
+                      "surface-variant": "#e0e3e5",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#d8e3fb",
+                      "on-secondary-fixed": "#0d1c2f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-padding": "32px",
+                      "section-gap": "48px",
+                      "stack-md": "16px",
+                      "unit": "4px",
+                      "stack-lg": "24px",
+                      "gutter": "24px",
+                      "stack-sm": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Public Sans"
+                      ],
+                      "headline-md": [
+                              "Public Sans"
+                      ],
+                      "data-tabular": [
+                              "Public Sans"
+                      ],
+                      "headline-sm": [
+                              "Public Sans"
+                      ],
+                      "display-lg": [
+                              "Public Sans"
+                      ],
+                      "body-lg": [
+                              "Public Sans"
+                      ],
+                      "body-md": [
+                              "Public Sans"
+                      ],
+                      "label-caps": [
+                              "Public Sans"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "data-tabular": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #F8FAFC; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20; font-size: 20px; }
+        .material-symbols-outlined[data-weight="fill"] { font-variation-settings: 'FILL' 1; }
+        
+        /* Custom Inputs */
+        .form-input:focus { border-color: #1E293B; box-shadow: none; outline: none; }
+        
+        /* Stepper styles */
+        .step-active { background-color: #1E293B; color: #ffffff; border-color: #1E293B; }
+        .step-inactive { background-color: #ffffff; color: #8590a6; border-color: #c5c6cd; }
+        .step-completed { background-color: #f2f4f6; color: #1E293B; border-color: #1E293B; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen flex flex-col antialiased">
+<!-- TopNavBar (Transactional Intent - Minimal) -->
+<header class="flex justify-between items-center px-container-padding py-stack-md w-full bg-surface-container-lowest border-b border-outline-variant h-16 shrink-0">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary" data-weight="fill">anchor</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">PPAnchor</span>
+</div>
+<div class="text-on-surface-variant font-body-sm">
+            Secure Onboarding Portal
+        </div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto px-container-padding py-section-gap flex justify-center items-start">
+<div class="w-full max-w-3xl bg-surface-container-lowest border border-outline-variant rounded-lg shadow-sm flex flex-col md:flex-row overflow-hidden min-h-[600px]">
+<!-- Left Sidebar - Stepper / Info -->
+<div class="w-full md:w-1/3 bg-surface-container-low p-stack-lg border-b md:border-b-0 md:border-r border-outline-variant flex flex-col">
+<div class="mb-stack-lg">
+<h1 class="font-headline-md text-headline-md text-primary mb-unit">Establish Identity</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Complete the following steps to authenticate your academic profile within the Anchor ecosystem.</p>
+</div>
+<div class="flex-1 flex flex-col gap-stack-lg mt-stack-md">
+<!-- Step 1 -->
+<div class="flex items-start gap-stack-sm group">
+<div class="w-8 h-8 rounded-full border-2 step-completed flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="pt-1">
+<h3 class="font-label-caps text-label-caps text-primary">Step 1</h3>
+<p class="font-body-sm text-on-surface-variant">Role Designation</p>
+</div>
+</div>
+<!-- Step 2 (Active) -->
+<div class="flex items-start gap-stack-sm group">
+<div class="w-8 h-8 rounded-full border-2 step-active flex items-center justify-center shrink-0 transition-colors">
+<span class="font-label-sm text-label-sm">2</span>
+</div>
+<div class="pt-1">
+<h3 class="font-label-caps text-label-caps text-primary">Step 2</h3>
+<p class="font-body-sm text-primary font-medium">Institutional Affiliation</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-stack-sm group">
+<div class="w-8 h-8 rounded-full border-2 step-inactive flex items-center justify-center shrink-0 transition-colors">
+<span class="font-label-sm text-label-sm">3</span>
+</div>
+<div class="pt-1">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant">Step 3</h3>
+<p class="font-body-sm text-on-surface-variant">Credential Verification</p>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-stack-lg border-t border-outline-variant text-center">
+<span class="material-symbols-outlined text-outline mb-unit">shield</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Data secured by Anchor Governance Protocol v2.1</p>
+</div>
+</div>
+<!-- Right Content - Form Canvas -->
+<div class="w-full md:w-2/3 p-stack-lg md:p-section-gap flex flex-col">
+<div class="mb-stack-lg">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-stack-sm">Institutional Affiliation</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Verify your academic status to unlock student-specific allocation models.</p>
+</div>
+<form class="flex-1 flex flex-col gap-stack-md">
+<!-- Institution Search -->
+<div class="flex flex-col gap-unit">
+<label class="font-label-sm text-label-sm text-on-surface" for="institution">Academic Institution</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="form-input w-full pl-10 pr-3 py-2 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT text-body-md text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary focus:border-primary transition-colors" id="institution" placeholder="Search by name or unique identifier..." type="text">
+</div>
+</div>
+<!-- Enrollment Status -->
+<div class="flex flex-col gap-unit mt-stack-sm">
+<label class="font-label-sm text-label-sm text-on-surface">Current Enrollment Status</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-sm">
+<label class="relative flex cursor-pointer rounded-lg border border-outline-variant bg-surface-container-lowest p-stack-sm hover:bg-surface-container-low focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<input class="peer sr-only" name="enrollment" type="radio">
+<div class="flex flex-col gap-1 w-full">
+<div class="flex justify-between items-center w-full">
+<span class="font-body-md text-on-surface font-medium">Undergraduate</span>
+<span class="material-symbols-outlined text-transparent peer-checked:text-primary transition-colors" data-weight="fill">check_circle</span>
+</div>
+<span class="font-label-sm text-on-surface-variant">Bachelors or equivalent</span>
+</div>
+</label>
+<label class="relative flex cursor-pointer rounded-lg border border-outline-variant bg-surface-container-lowest p-stack-sm hover:bg-surface-container-low focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<input class="peer sr-only" name="enrollment" type="radio">
+<div class="flex flex-col gap-1 w-full">
+<div class="flex justify-between items-center w-full">
+<span class="font-body-md text-on-surface font-medium">Graduate</span>
+<span class="material-symbols-outlined text-transparent peer-checked:text-primary transition-colors" data-weight="fill">check_circle</span>
+</div>
+<span class="font-label-sm text-on-surface-variant">Masters, PhD, or Doctoral</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Expected Graduation -->
+<div class="grid grid-cols-2 gap-stack-md mt-stack-sm">
+<div class="flex flex-col gap-unit">
+<label class="font-label-sm text-label-sm text-on-surface" for="grad_month">Expected Graduation Month</label>
+<select class="form-input w-full px-3 py-2 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT text-body-md text-on-surface focus:ring-1 focus:ring-primary focus:border-primary transition-colors appearance-none" id="grad_month">
+<option disabled="" selected="" value="">Select Month</option>
+<option value="05">May</option>
+<option value="06">June</option>
+<option value="12">December</option>
+</select>
+</div>
+<div class="flex flex-col gap-unit">
+<label class="font-label-sm text-label-sm text-on-surface" for="grad_year">Expected Graduation Year</label>
+<input class="form-input w-full px-3 py-2 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT text-body-md text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary focus:border-primary transition-colors" id="grad_year" max="2035" min="2024" placeholder="YYYY" type="number">
+</div>
+</div>
+<!-- Read-Only Notice -->
+<div class="mt-stack-md p-stack-sm bg-surface-container-low rounded-DEFAULT flex items-start gap-stack-sm border border-transparent">
+<span class="material-symbols-outlined text-on-surface-variant shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Your institutional affiliation determines baseline allocation parameters. Official transcripts are not required during initial onboarding.</p>
+</div>
+<!-- Actions -->
+<div class="mt-auto pt-stack-lg border-t border-outline-variant flex justify-between items-center">
+<button class="px-stack-lg py-2 border border-outline-variant bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm rounded-DEFAULT hover:bg-surface-container-low transition-colors" type="button">
+                            Back
+                        </button>
+<button class="px-stack-lg py-2 bg-primary-container text-on-primary font-label-sm text-label-sm rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center gap-unit" type="button">
+                            Continue <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</main>
+
+
+</body></html>
