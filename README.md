@@ -1,4 +1,3 @@
-Develop By Allen Christian 
 # AYUSH — Adaptive Allocation Engine
 
 **Project**: Adaptive Allocation Engine for government internship placement. See [docs/00-product/PRODUCT_NARRATIVE.md](docs/00-product/PRODUCT_NARRATIVE.md) for the full narrative. Technical source: [docs/00-product/MASTER_DESIGN.md](docs/00-product/MASTER_DESIGN.md) and [docs/02-architecture/ARCHITECTURE.md](docs/02-architecture/ARCHITECTURE.md).
