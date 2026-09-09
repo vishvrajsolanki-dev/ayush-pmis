@@ -26,4 +26,15 @@ jobs:
 
     - name: Run tests
       working-directory: ./backend
-      run: pytest
+      run: |
+        # The backend has not been implemented yet, so it has no test files to
+        # collect. Keep this CI step informative without failing solely on
+        # pytest's exit code 5; real test failures remain blocking.
+        pytest || {
+          status=$?
+          if [ "$status" -eq 5 ]; then
+            echo "No backend tests collected; this is expected until backend code exists."
+            exit 0
+          fi
+          exit "$status"
+        }
